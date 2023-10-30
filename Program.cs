@@ -2,4 +2,5 @@
 using CodeStepByStep_CSharp.Basics;
 
 //NumberLoops.DisplayLoopOutput();
-EvenAverage.FindEvenNumberAverage();
+//EvenAverage.FindEvenNumberAverage();
+EvenSumMax.EvenSum();
