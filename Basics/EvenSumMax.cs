@@ -28,40 +28,38 @@ namespace CodeStepByStep_CSharp.Basics
 
         public static void EvenSum()
         {
-            var numOfInts = getHowManyIntegers();
-            List<int> evenNumbers =  getIntegers(numOfInts);
-            var evenSum = getEvenSum(evenNumbers);
-            var maxEvenNumber = getMaxNumber(evenNumbers);
-            showOutput(evenSum, maxEvenNumber);
+            var numOfInts = GetHowManyIntegers();
+            List<int> evenNumbers =  GetIntegers(numOfInts);
+            var evenSum = GetEvenSum(evenNumbers);
+            var maxEvenNumber = GetMaxNumber(evenNumbers);
+            ShowOutput(evenSum, maxEvenNumber);
 
         }
 
-        private static void showOutput(int evenSum, int maxEvenNumber)
+        private static void ShowOutput(int evenSum, int maxEvenNumber)
         {
             Console.WriteLine($"even sum: {evenSum}, even max: {maxEvenNumber}");
         }
 
-        private static int getMaxNumber(List<int> evenNumbers)
+        private static int GetMaxNumber(List<int> evenNumbers)
         {
             return evenNumbers.Max();
         }
 
-        private static int getEvenSum(List<int> evenNumbers)
+        private static int GetEvenSum(List<int> evenNumbers)
         {
             return evenNumbers.Sum();
         }
 
-        private static List<int> getIntegers(int numOfInts)
+        private static List<int> GetIntegers(int numOfInts)
         {
             List<int> evenUserInts = new List<int>();
 
             do
             {
-                //Console.Write("next integer? ");
-                //var userInt = Console.ReadLine();
-                var userInt = getUserInput("next integer? ");
+                var userInt = GetUserInput("next integer? ");
 
-                if (isValidInt(userInt))
+                if (IsValidInt(userInt))
                 {
                     int.TryParse(userInt, out int validUserInt);
 
@@ -78,13 +76,13 @@ namespace CodeStepByStep_CSharp.Basics
             return evenUserInts;
         }
 
-        private static int getHowManyIntegers()
+        private static int GetHowManyIntegers()
         {
             do
             {
-                var numIntegers = getUserInput("How many integers? ");
+                var numIntegers = GetUserInput("How many integers? ");
 
-                if (isValidInt(numIntegers) == false)
+                if (IsValidInt(numIntegers) == false)
                 {
                     Console.Write("Please enter a valid integer. ");
                 }
@@ -96,13 +94,13 @@ namespace CodeStepByStep_CSharp.Basics
             } while (true);
         }
 
-        private static string getUserInput(string message)
+        private static string GetUserInput(string message)
         {
             Console.Write(message);
             return Console.ReadLine();
         }
 
-        private static bool isValidInt( string userInput)
+        private static bool IsValidInt( string userInput)
         {
             if (int.TryParse(userInput, out int validInt) == true)
             {
