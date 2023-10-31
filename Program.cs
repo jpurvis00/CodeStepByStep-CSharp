@@ -7,4 +7,5 @@ using CodeStepByStep_CSharp.Basics;
 //FearTheTree.DisplayTree();
 //InchesToCentimeters.ConvertInchesToCentimeters();
 //NumberSquare.DisplayNumberSquare(1, 5);
-PercentageGrade.ShowPercentageGrade();
+//PercentageGrade.ShowPercentageGrade();
+PrintProgram.DisplayPrintProgram();
