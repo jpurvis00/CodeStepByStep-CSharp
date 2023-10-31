@@ -5,4 +5,5 @@ using CodeStepByStep_CSharp.Basics;
 //EvenAverage.FindEvenNumberAverage();
 //EvenSumMax.EvenSum();
 //FearTheTree.DisplayTree();
-InchesToCentimeters.ConvertInchesToCentimeters();
+//InchesToCentimeters.ConvertInchesToCentimeters();
+NumberSquare.DisplayNumberSquare(1, 5);
