@@ -8,4 +8,5 @@ using CodeStepByStep_CSharp.Basics;
 //InchesToCentimeters.ConvertInchesToCentimeters();
 //NumberSquare.DisplayNumberSquare(1, 5);
 //PercentageGrade.ShowPercentageGrade();
-PrintProgram.DisplayPrintProgram();
+//PrintProgram.DisplayPrintProgram();
+PrintTriangle.DisplayTriangle();
