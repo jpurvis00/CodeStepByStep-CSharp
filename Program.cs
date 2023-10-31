@@ -6,4 +6,5 @@ using CodeStepByStep_CSharp.Basics;
 //EvenSumMax.EvenSum();
 //FearTheTree.DisplayTree();
 //InchesToCentimeters.ConvertInchesToCentimeters();
-NumberSquare.DisplayNumberSquare(1, 5);
+//NumberSquare.DisplayNumberSquare(1, 5);
+PercentageGrade.ShowPercentageGrade();
