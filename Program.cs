@@ -9,4 +9,5 @@ using CodeStepByStep_CSharp.Basics;
 //NumberSquare.DisplayNumberSquare(1, 5);
 //PercentageGrade.ShowPercentageGrade();
 //PrintProgram.DisplayPrintProgram();
-PrintTriangle.DisplayTriangle();
+//PrintTriangle.DisplayTriangle();
+Receipt.CalculateTotalReceipt();
