@@ -1,6 +1,8 @@
 ﻿
 using CodeStepByStep_CSharp.Basics;
+using CodeStepByStep_CSharp.Arrays;
 
+/*     BASICS    */
 //NumberLoops.DisplayLoopOutput();
 //EvenAverage.FindEvenNumberAverage();
 //EvenSumMax.EvenSum();
@@ -12,4 +14,7 @@ using CodeStepByStep_CSharp.Basics;
 //PrintTriangle.DisplayTriangle();
 //Receipt.CalculateTotalReceipt();
 //Receipt2.ComputeTotalMealCost();
-StanfordVsCal.StanforVsCal();
+//StanfordVsCal.StanforVsCal();
+
+/*     ARRAYS    */
+ArrayMystery.Mystery(new int[] { 7, 3, 2, 0, 5 });
