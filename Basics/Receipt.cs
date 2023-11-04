@@ -29,10 +29,17 @@ namespace CodeStepByStep_CSharp.Basics
             decimal subtotal = 38M + 40M + 30M;
             var tax = subtotal * _tax;
             var tip = subtotal * _tip;
-            subtotal = subtotal + tax + tip;
+            var total = subtotal + tax + tip;
 
-            Console.WriteLine($"Total: {subtotal.ToString("C", CultureInfo.CurrentCulture)}");
+            DisplayOutput("Subtotal:", subtotal);
+            DisplayOutput("Tax:", tax);
+            DisplayOutput("Tip:", tip);
+            DisplayOutput("Total:", total);
+        }
 
+        public static void DisplayOutput(string message, decimal amount)
+        {
+            Console.WriteLine($"{message} {amount.ToString("C", CultureInfo.CurrentCulture)}");
         }
     }
 }
