@@ -11,4 +11,5 @@ using CodeStepByStep_CSharp.Basics;
 //PrintProgram.DisplayPrintProgram();
 //PrintTriangle.DisplayTriangle();
 //Receipt.CalculateTotalReceipt();
-Receipt2.ComputeTotalMealCost();
+//Receipt2.ComputeTotalMealCost();
+StanfordVsCal.StanforVsCal();
