@@ -2,7 +2,9 @@
 using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +43,56 @@ namespace CodeStepByStep_CSharp.Basics
         //Tip: $18.75
         //Total: $153.75
 
+        private static readonly decimal _tax = .08M;
+        private static readonly decimal _tip = .15M;
 
+        public static void ComputeTotalMealCost()
+        {
+            var mealCost = PromptUserForInput();
+            
+            (var tax, var tip, var total) = CalculateMealCost(mealCost);
+
+            DisplayOutput("Subtotal:", mealCost);
+            DisplayOutput("Tax:", tax);
+            DisplayOutput("Tip:", tip);
+            DisplayOutput("Total:", total);
+        }
+
+        private static (decimal, decimal, decimal) CalculateMealCost(decimal mealCost)
+        {
+
+            decimal tax = mealCost * _tax;
+            decimal tip = mealCost * _tip;
+            decimal total = mealCost + tax + tip;
+            
+            return (tax, tip, total);
+        }
+
+        private static void DisplayOutput(string message, decimal amount)
+        {
+            Console.WriteLine($"{message} {amount.ToString("C", CultureInfo.CurrentCulture)}");
+        }
+
+        private static decimal PromptUserForInput()
+        {
+            bool isValidInput = false;
+            decimal validDecimal = 0;
+
+            while (isValidInput == false)
+            {
+                Console.Write("What was the meal cost? ");
+                (isValidInput, validDecimal) = CheckForValidIntEntered(Console.ReadLine());
+            }
+
+            return validDecimal;
+        }
+
+        private static (bool, decimal) CheckForValidIntEntered(string userInput)
+        {
+            decimal result;
+            bool isValidDecimal = decimal.TryParse(userInput, out result);
+
+            return(isValidDecimal, result);
+        }
     }
 }

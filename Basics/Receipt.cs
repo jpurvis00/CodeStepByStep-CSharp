@@ -37,7 +37,7 @@ namespace CodeStepByStep_CSharp.Basics
             DisplayOutput("Total:", total);
         }
 
-        public static void DisplayOutput(string message, decimal amount)
+        private static void DisplayOutput(string message, decimal amount)
         {
             Console.WriteLine($"{message} {amount.ToString("C", CultureInfo.CurrentCulture)}");
         }

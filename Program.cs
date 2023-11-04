@@ -10,5 +10,5 @@ using CodeStepByStep_CSharp.Basics;
 //PercentageGrade.ShowPercentageGrade();
 //PrintProgram.DisplayPrintProgram();
 //PrintTriangle.DisplayTriangle();
-Receipt.CalculateTotalReceipt();
-//Receipt2.CalculateTotalReceipt();
+//Receipt.CalculateTotalReceipt();
+Receipt2.ComputeTotalMealCost();
