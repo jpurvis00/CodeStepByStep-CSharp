@@ -25,4 +25,5 @@ using CodeStepByStep_CSharp.Arrays;
 //ComputeAverage.RunComputeAverage(new int[] { 1, -2, 4, -4, 9, -6, 16, -8, 25, -10 });
 //Console.WriteLine(Contains.RunContains(new int[] { 1, 6, 2, 1, 4, 1, 2, 1, 8 }, new int[] { 1, 2, 1 }));
 //Console.WriteLine(Contains.RunContains(new int[] { 1, 6, 2, 1, 4, 1, 2, 1, 8 }, new int[] { 1, 2, 2 }));
-CountDuplicates.RunCountDuplicate();
+//CountDuplicates.RunCountDuplicate();
+Console.WriteLine($"Number of unique #'s: {CountUnique.CountUniqueNumbers(new int[] { 7, 7, 2, 2, 1, 2, 2, 7 })}");
