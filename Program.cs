@@ -23,5 +23,6 @@ using CodeStepByStep_CSharp.Arrays;
 //Collapse.RunCollapse(new int[] { 7, 2, 8, 9, 4, 13, 7, 1, 9, 10 });
 //Collapse.RunCollapse(new int[] { 7, 2, 8, 9, 4, 13, 7, 1, 9 });
 //ComputeAverage.RunComputeAverage(new int[] { 1, -2, 4, -4, 9, -6, 16, -8, 25, -10 });
-Console.WriteLine(Contains.RunContains(new int[] { 1, 6, 2, 1, 4, 1, 2, 1, 8 }, new int[] { 1, 2, 1 }));
-Console.WriteLine(Contains.RunContains(new int[] { 1, 6, 2, 1, 4, 1, 2, 1, 8 }, new int[] { 1, 2, 2 }));
+//Console.WriteLine(Contains.RunContains(new int[] { 1, 6, 2, 1, 4, 1, 2, 1, 8 }, new int[] { 1, 2, 1 }));
+//Console.WriteLine(Contains.RunContains(new int[] { 1, 6, 2, 1, 4, 1, 2, 1, 8 }, new int[] { 1, 2, 2 }));
+CountDuplicates.RunCountDuplicate();
