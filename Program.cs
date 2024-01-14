@@ -34,4 +34,5 @@ using CodeStepByStep_CSharp.Arrays;
 //Console.WriteLine($"Number in the middle of the array is: {FindMedian.RunFindMedian(new int[] { 5, 2, 4, 17, 55, 4, 3, 26, 18, 2, 17 })}");
 //Console.WriteLine($"Number in the middle of the array is: {FindMedian.RunFindMedian(new int[] { 42, 37, 1, 97, 1, 2, 7, 42, 3, 25, 89, 15, 10, 29, 27 })}");
 //Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7 })}");
-Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7,  9, 15, 17, 6 })}");
+//Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7,  9, 15, 17, 6 })}");
+Console.WriteLine($"The percentage of even #'s in the array is: {GetPercentEven.RunGetPercentEven(new int[] {6, 4, 6, 2, 9, 11, 5})}%");
