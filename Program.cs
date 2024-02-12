@@ -35,4 +35,7 @@ using CodeStepByStep_CSharp.Arrays;
 //Console.WriteLine($"Number in the middle of the array is: {FindMedian.RunFindMedian(new int[] { 42, 37, 1, 97, 1, 2, 7, 42, 3, 25, 89, 15, 10, 29, 27 })}");
 //Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7 })}");
 //Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7,  9, 15, 17, 6 })}");
-Console.WriteLine($"The percentage of even #'s in the array is: {GetPercentEven.RunGetPercentEven(new int[] {6, 4, 6, 2, 9, 11, 5})}%");
+//Console.WriteLine($"The percentage of even #'s in the array is: {GetPercentEven.RunGetPercentEven(new int[] {6, 4, 6, 2, 9, 11, 5})}%");
+//int[] a1 = { 8, 9, 2, 1};
+//int[] a2 = { 5, 7, 1, 2, 9, 8 };
+//Console.WriteLine($"The values from array 2 reversed appear in the original array at least 2 times: {HasMirrorTwice.RunHasMirrorTwice(a1, a2)}");
