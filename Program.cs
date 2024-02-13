@@ -39,3 +39,4 @@ using CodeStepByStep_CSharp.Arrays;
 //int[] a1 = { 8, 9, 2, 1};
 //int[] a2 = { 5, 7, 1, 2, 9, 8 };
 //Console.WriteLine($"The values from array 2 reversed appear in the original array at least 2 times: {HasMirrorTwice.RunHasMirrorTwice(a1, a2)}");
+IndexOf.RunIndexOf();
