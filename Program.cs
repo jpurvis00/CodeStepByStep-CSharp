@@ -61,5 +61,6 @@ using CodeStepByStep_CSharp.Arrays;
 //Console.WriteLine($"Unique values in array: {NumUnique.RunUnique(list)}");
 //int[] array = {32, 5, 27, -3, 2598};
 //PrintArrayElements.Print(array);
-string[] a = {"Madam", "raceCAR", "", "hi", "A", "Abba", "banana", "dog God", "STOP otto POTS", "Madame", "C#", "LevEL", "staTS"};
-RemovePalindromes.RunRemovePalindromes(a);
+//string[] a = {"Madam", "raceCAR", "", "hi", "A", "Abba", "banana", "dog God", "STOP otto POTS", "Madame", "C#", "LevEL", "staTS"};
+//RemovePalindromes.RunRemovePalindromes(a);
+Sieve.RunSieve();
