@@ -55,7 +55,7 @@ namespace CodeStepByStep_CSharp.Arrays
             }
         }
 
-        private static int[] FindPrimeNumbers(int[] newArray)
+        public static int[] FindPrimeNumbers(int[] newArray)
         {
             for(int i = 0; i < newArray.Length; i++)
             {
@@ -74,7 +74,7 @@ namespace CodeStepByStep_CSharp.Arrays
             return newArray;
         }
 
-        private static int[] CreateNewArray(int userNumber)
+        public static int[] CreateNewArray(int userNumber)
         {
             int[] primeArray = new int[userNumber - 1];
 
