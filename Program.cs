@@ -71,4 +71,7 @@ using CodeStepByStep_CSharp.Arrays;
 //Console.WriteLine($"List is sorted: {Sorted.RunSorted(list)}");
 //int[] list = { 18, 7, 4, 24, 11 };
 //Split.RunSplit(list);
-Squared.RunSquared();
+//Squared.RunSquared();
+string[] a = { "a", "bb", "c", "ddd", "ee", "f", "g" };
+//string[] a = { "a", "bb", "c", "ddd", "ee", "f", "g", "h" };
+SwitchPairs.RunSwitchPairs(a);
