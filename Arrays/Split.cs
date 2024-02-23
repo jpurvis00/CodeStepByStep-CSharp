@@ -10,10 +10,6 @@
 //pair 9, 9, the number 7 is Split into 4, 3, the number 4 is Split into 2, 2,
 //the number 24 is Split into 12, 12 and the number 11 is Split into 6, 5.)
 
-
-
-
-
 namespace CodeStepByStep_CSharp.Arrays
 {
     public class Split
