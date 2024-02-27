@@ -1,8 +1,9 @@
 ﻿
 using CodeStepByStep_CSharp.Basics;
 using CodeStepByStep_CSharp.Arrays;
+using CodeStepByStep_CSharp.Classes_and_Object;
 
-/*     BASICS    */
+/*     BASICS   
 //NumberLoops.DisplayLoopOutput();
 //EvenAverage.FindEvenNumberAverage();
 //EvenSumMax.EvenSum();
@@ -15,8 +16,9 @@ using CodeStepByStep_CSharp.Arrays;
 //Receipt.CalculateTotalReceipt();
 //Receipt2.ComputeTotalMealCost();
 //StanfordVsCal.StanforVsCal();
+*/
 
-/*     ARRAYS    */
+/*     ARRAYS    
 //ArrayMystery.Mystery(new int[] { 7, 3, 2, 0, 5 });
 //Banish.BanishArrayNumbersRefactored(new int[] { 42, 3, 9, 42, 42, 0, 42, 9, 42, 42, 17, 8, 2222, 4, 9, 0, 1 }, new int[] { 42, 2222, 9 });
 //CollapsePairs.RunCollapsePairs(new int[] { 7, 2, 8, 9, 4, 22, 7, 1, 9, 10 });
@@ -35,7 +37,6 @@ using CodeStepByStep_CSharp.Arrays;
 //Console.WriteLine($"Number in the middle of the array is: {FindMedian.RunFindMedian(new int[] { 42, 37, 1, 97, 1, 2, 7, 42, 3, 25, 89, 15, 10, 29, 27 })}");
 //Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7 })}");
 //Console.WriteLine($"The range between the smallest/largest #s is: {FindRange.RunFindRange(new int[] { 7,  9, 15, 17, 6 })}");
-
 //Console.WriteLine($"The percentage of even #'s in the array is: {GetPercentEven.RunGetPercentEven(new int[] {6, 4, 6, 2, 9, 11, 5})}");
 //int[] a1 = { 8, 9, 2, 1};
 //int[] a2 = { 5, 7, 1, 2, 9, 8 };
@@ -72,6 +73,21 @@ using CodeStepByStep_CSharp.Arrays;
 //int[] list = { 18, 7, 4, 24, 11 };
 //Split.RunSplit(list);
 //Squared.RunSquared();
-string[] a = { "a", "bb", "c", "ddd", "ee", "f", "g" };
+//string[] a = { "a", "bb", "c", "ddd", "ee", "f", "g" };
 //string[] a = { "a", "bb", "c", "ddd", "ee", "f", "g", "h" };
-SwitchPairs.RunSwitchPairs(a);
+//SwitchPairs.RunSwitchPairs(a);
+*/
+
+/* Classes and Object */
+BankAccount jeffAccount = new BankAccount("Jeff P - Account");
+Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+jeffAccount.Deposit(10.50M);
+Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+jeffAccount.Deposit(-10.50M);
+Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+jeffAccount.Deposit(20M);
+Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+jeffAccount.Withdraw(-50M);
+Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+jeffAccount.Withdraw(20M);
+Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
