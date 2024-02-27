@@ -53,5 +53,21 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
                 _account.Balance -= amount;
             }
         }
+
+        public override string ToString()
+        {
+            string output;
+
+            if (_account.Balance >= 0)
+            {
+                output = _account.Name + ", $" + _account.Balance;
+            }
+            else
+            {
+                output = _account.Name + ", -$" + Math.Abs(_account.Balance);
+            }
+
+            return output;
+        }
     }
 }

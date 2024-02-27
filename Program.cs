@@ -80,14 +80,16 @@ using CodeStepByStep_CSharp.Classes_and_Object;
 
 /* Classes and Object */
 BankAccount jeffAccount = new BankAccount("Jeff P - Account");
-Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+Console.WriteLine(jeffAccount.ToString());
 jeffAccount.Deposit(10.50M);
-Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+Console.WriteLine(jeffAccount.ToString());
 jeffAccount.Deposit(-10.50M);
-Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+Console.WriteLine(jeffAccount.ToString());
 jeffAccount.Deposit(20M);
-Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+Console.WriteLine(jeffAccount.ToString());
+jeffAccount.Withdraw(50M);
+Console.WriteLine(jeffAccount.ToString());
 jeffAccount.Withdraw(-50M);
-Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+Console.WriteLine(jeffAccount.ToString());
 jeffAccount.Withdraw(20M);
-Console.WriteLine($"Act name: {jeffAccount.GetAccountName()}    Balance: {jeffAccount.GetAccountBalance()}");
+Console.WriteLine(jeffAccount.ToString());
