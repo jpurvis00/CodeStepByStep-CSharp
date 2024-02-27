@@ -21,6 +21,7 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
     public class BankAccount
     {
         private BankAccountModel _account;
+        private int _numberOfTransactions;
 
         public BankAccount(string name)
         {
@@ -44,6 +45,7 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
                 _account.Balance += amount;
             }
 
+            _numberOfTransactions++;
         }
 
         public void Withdraw(decimal amount)
@@ -51,6 +53,29 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
             if( amount > 0 && amount < _account.Balance)
             {
                 _account.Balance -= amount;
+            }
+            
+            _numberOfTransactions++;
+        }
+
+        public bool TransactionFee(decimal feeAmount)
+        {
+            decimal transactionFeeDeductionAmount = 0;
+
+            for(int i = 1; i <= _numberOfTransactions; i++)
+            {
+                transactionFeeDeductionAmount += feeAmount * i;
+            }
+
+            if (_account.Balance - transactionFeeDeductionAmount > 0)
+            {
+                _account.Balance -= transactionFeeDeductionAmount;
+                return true;
+            }
+            else
+            {
+                _account.Balance = 0;
+                return false;
             }
         }
 
