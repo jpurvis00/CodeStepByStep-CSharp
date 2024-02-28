@@ -3,6 +3,7 @@ using CodeStepByStep_CSharp.Basics;
 using CodeStepByStep_CSharp.Arrays;
 using CodeStepByStep_CSharp.Classes_and_Object;
 using CodeStepByStep_CSharp.Classes_and_Object.Model;
+using CodeStepByStep_CSharp;
 
 /*     BASICS   
 //NumberLoops.DisplayLoopOutput();
@@ -102,5 +103,27 @@ Console.WriteLine(jeffAccount.ToString());
 Console.WriteLine(stephAccount.ToString());
 */
 
-Circle circle = new Circle(2.0);
-Console.WriteLine(circle.ToString());
+//Circle circle = new Circle(2.0);
+//Console.WriteLine(circle.ToString());
+
+Clock clock = new Clock(6, 27, "PM");
+clock.Advance(-1);       //  6:28 PM
+clock.Advance(1);       //  6:28 PM
+Console.WriteLine(clock.ToString());
+clock.Advance(30);      //  6:58 PM
+Console.WriteLine(clock.ToString());
+clock.Advance(2);      //  7:00 PM
+Console.WriteLine(clock.ToString());
+clock.Advance(3);       //  7:03 PM
+Console.WriteLine(clock.ToString());
+clock.Advance(60);      //  8:03 PM
+Console.WriteLine(clock.ToString());
+clock.Advance(128);     // 10:11 PM
+Console.WriteLine(clock.ToString());
+clock.Advance(180);     //  1:11 AM
+Console.WriteLine(clock.ToString());
+clock.Advance(1440);    //  1:11 AM  (1 day later)
+Console.WriteLine(clock.ToString());
+clock.Advance(21075);   //  4:26 PM  (2 weeks later)
+Console.WriteLine(clock.ToString());
+
