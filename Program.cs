@@ -80,6 +80,8 @@ using CodeStepByStep_CSharp.Classes_and_Object.Model;
 */
 
 /* Classes and Object */
+
+/* Bank Account
 BankAccountModel jeffAccount = new BankAccountModel("jeff Checking Account");
 BankAccount.Deposit(90.00M, jeffAccount);
 
@@ -98,3 +100,7 @@ BankAccount.Transfer(88.00M, jeffAccount, stephAccount);
 BankAccount.Transfer(1.00M, jeffAccount, stephAccount);
 Console.WriteLine(jeffAccount.ToString());
 Console.WriteLine(stephAccount.ToString());
+*/
+
+Circle circle = new Circle(2.0);
+Console.WriteLine(circle.ToString());
