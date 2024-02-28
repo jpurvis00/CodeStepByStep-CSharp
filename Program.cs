@@ -2,6 +2,7 @@
 using CodeStepByStep_CSharp.Basics;
 using CodeStepByStep_CSharp.Arrays;
 using CodeStepByStep_CSharp.Classes_and_Object;
+using CodeStepByStep_CSharp.Classes_and_Object.Model;
 
 /*     BASICS   
 //NumberLoops.DisplayLoopOutput();
@@ -79,25 +80,21 @@ using CodeStepByStep_CSharp.Classes_and_Object;
 */
 
 /* Classes and Object */
-BankAccount jeffAccount = new BankAccount("Jeff P - Account");
-//Console.WriteLine(jeffAccount.ToString());
-//jeffAccount.Deposit(10.50M);
-//Console.WriteLine(jeffAccount.ToString());
-//jeffAccount.Deposit(-10.50M);
-//Console.WriteLine(jeffAccount.ToString());
-//jeffAccount.Deposit(20M);
-//Console.WriteLine(jeffAccount.ToString());
-//jeffAccount.Withdraw(50M);
-//Console.WriteLine(jeffAccount.ToString());
-//jeffAccount.Withdraw(-50M);
-//Console.WriteLine(jeffAccount.ToString());
-//jeffAccount.Withdraw(20M);
-//Console.WriteLine(jeffAccount.ToString());
-jeffAccount.Deposit(10.00M);
-jeffAccount.Deposit(50.00M);
-jeffAccount.Deposit(10.00M);
-jeffAccount.Deposit(70.00M);
-var trueOrFalse = jeffAccount.TransactionFee(5.00M);
+BankAccountModel jeffAccount = new BankAccountModel("jeff Checking Account");
+BankAccount.Deposit(90.00M, jeffAccount);
+
+BankAccountModel stephAccount = new BankAccountModel("Stephanie Checking Account");
+BankAccount.Deposit(25.00M, stephAccount);
+
 Console.WriteLine(jeffAccount.ToString());
-trueOrFalse = jeffAccount.TransactionFee(10.00M);
+Console.WriteLine(stephAccount.ToString());
+BankAccount.Transfer(20.00M, jeffAccount, stephAccount);
+BankAccount.Transfer(10.00M, jeffAccount, stephAccount);
+BankAccount.Transfer(-1.00M, jeffAccount, stephAccount);
+BankAccount.Transfer(39.00M, stephAccount, jeffAccount);
+BankAccount.Transfer(50.00M, stephAccount, jeffAccount);
+BankAccount.Transfer(1.00M, stephAccount, jeffAccount);
+BankAccount.Transfer(88.00M, jeffAccount, stephAccount);
+BankAccount.Transfer(1.00M, jeffAccount, stephAccount);
 Console.WriteLine(jeffAccount.ToString());
+Console.WriteLine(stephAccount.ToString());

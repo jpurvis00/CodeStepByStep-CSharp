@@ -15,84 +15,96 @@
 //all the public member functions and constructor.
 
 using CodeStepByStep_CSharp.Classes_and_Object.Model;
+using System.Reflection.Metadata.Ecma335;
 
 namespace CodeStepByStep_CSharp.Classes_and_Object
 {
-    public class BankAccount
+    public static class BankAccount
     {
-        private BankAccountModel _account;
-        private int _numberOfTransactions;
-
-        public BankAccount(string name)
+        public static string GetAccountName(BankAccountModel account)
         {
-            _account =  new BankAccountModel(name);                
+            return account.Name;
         }
 
-        public string GetAccountName()
+        public static decimal GetAccountBalance(BankAccountModel account)
         {
-            return _account.Name;
+            return account.Balance;
         }
 
-        public decimal GetAccountBalance()
-        {
-            return _account.Balance;
-        }
-
-        public void Deposit(decimal amount)
+        public static void Deposit(decimal amount, BankAccountModel account)
         {
             if(amount > 0)
             {
-                _account.Balance += amount;
+                account.Balance += amount;
             }
 
-            _numberOfTransactions++;
+            account.NumberOfTransactions++;
         }
 
-        public void Withdraw(decimal amount)
+        public static void Withdraw(decimal amount, BankAccountModel account)
         {
-            if( amount > 0 && amount < _account.Balance)
+            if (amount > 0 && amount < account.Balance)
             {
-                _account.Balance -= amount;
+                account.Balance -= amount;
             }
-            
-            _numberOfTransactions++;
+
+            account.NumberOfTransactions++;
         }
 
-        public bool TransactionFee(decimal feeAmount)
+        public static bool TransactionFee(decimal feeAmount, BankAccountModel account)
         {
             decimal transactionFeeDeductionAmount = 0;
 
-            for(int i = 1; i <= _numberOfTransactions; i++)
+            for (int i = 1; i <= account.NumberOfTransactions; i++)
             {
                 transactionFeeDeductionAmount += feeAmount * i;
             }
 
-            if (_account.Balance - transactionFeeDeductionAmount > 0)
+            if (account.Balance - transactionFeeDeductionAmount > 0)
             {
-                _account.Balance -= transactionFeeDeductionAmount;
+                account.Balance -= transactionFeeDeductionAmount;
                 return true;
             }
             else
             {
-                _account.Balance = 0;
+                account.Balance = 0;
                 return false;
             }
         }
 
-        public override string ToString()
+        public static void Transfer(decimal transferAmount, BankAccountModel fromAccount, BankAccountModel toAccount)
         {
-            string output;
+            decimal transferFee = 5.00M;
 
-            if (_account.Balance >= 0)
+            if (transferAmount < 0)
             {
-                output = _account.Name + ", $" + _account.Balance;
+                return;
+            }
+
+            if (fromAccount.Balance >= (transferAmount + transferFee))
+            {
+                fromAccount.Balance -= (transferAmount + transferFee);
+                fromAccount.NumberOfTransactions++;
+
+                toAccount.Balance += transferAmount;
+                toAccount.NumberOfTransactions++;
+            }
+            else if (fromAccount.Balance < 5.00M)
+            {
+                return;
             }
             else
             {
-                output = _account.Name + ", -$" + Math.Abs(_account.Balance);
-            }
+                decimal amountToTransfer = 0;
 
-            return output;
+                fromAccount.Balance -= transferFee;
+                amountToTransfer = fromAccount.Balance;
+                fromAccount.Balance = 0;
+                fromAccount.NumberOfTransactions++;
+
+                toAccount.Balance += amountToTransfer;
+                toAccount.NumberOfTransactions++;
+            }
         }
     }
 }
