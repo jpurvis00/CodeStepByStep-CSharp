@@ -39,10 +39,10 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
 
         private readonly int[] NumberOfDaysInMonth = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-        public Date(int day, int month)
+        public Date(int month, int day)
         {
-            Day = day;
             Month = month;
+            Day = day;
         }
 
         public int Month { get; set; }
@@ -52,6 +52,18 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
         public int DaysInMonth()
         {
             return NumberOfDaysInMonth[Month - 1];
+        }
+
+        public int AbsoluteDay()
+        {
+            int numbDays = 0;
+
+            for(int i = 0; i < Month - 1; i++)
+            {
+                numbDays += NumberOfDaysInMonth[i];
+            }
+
+            return numbDays + Day;
         }
 
         public void NextDay()
@@ -88,7 +100,7 @@ namespace CodeStepByStep_CSharp.Classes_and_Object
             string month = TurnDayMonthIntoString(Month);
             string day = TurnDayMonthIntoString(Day);
 
-            return $"{day}/{month}";
+            return $"{month}/{day}";
         }
 
         private string TurnDayMonthIntoString(int checkValue)

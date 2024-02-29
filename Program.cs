@@ -129,12 +129,28 @@ clock.Advance(21075);   //  4:26 PM  (2 weeks later)
 Console.WriteLine(clock.ToString());
 */
 
-Date date = new Date(1, 4);
+/* Date - AbsoluteDay */
+Date date = new Date(4, 1);
 date.NextDay();
+Console.WriteLine($"Absolute day: {date.AbsoluteDay()}");
 Console.WriteLine($"{date.ToString()}   Days in {date.GetMonth()}: {date.DaysInMonth()}");
-Date date2 = new Date(30, 6);
+Date date2 = new Date(6, 30);
 date2.NextDay();
+Console.WriteLine($"Absolute day: {date2.AbsoluteDay()}");
 Console.WriteLine($"{date2.ToString()}   Days in {date2.GetMonth()}: {date2.DaysInMonth()}");
-Date date3 = new Date(31, 12);
+Date date3 = new Date(12, 31);
 date3.NextDay();
+Console.WriteLine($"Absolute day: {date3.AbsoluteDay()}");
 Console.WriteLine($"{date3.ToString()}   Days in {date3.GetMonth()}: {date3.DaysInMonth()}");
+Date jan1 = new Date(1, 1);
+Console.WriteLine($"Absolute day: {jan1.AbsoluteDay()}"); //1
+Date jan4 = new Date(1, 4); 
+Console.WriteLine($"Absolute day: {jan4.AbsoluteDay()}"); //4
+Date feb1 = new Date(2, 1); 
+Console.WriteLine($"Absolute day: {feb1.AbsoluteDay()}"); //32
+Date mar10 = new Date(3, 10);
+Console.WriteLine($"Absolute day: {mar10.AbsoluteDay()}"); //70
+Date sep19 = new Date(9, 19);
+Console.WriteLine($"Absolute day: {sep19.AbsoluteDay()}"); //263
+Date dec31 = new Date(12, 31);
+Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
