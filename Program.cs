@@ -4,6 +4,7 @@ using CodeStepByStep_CSharp.Arrays;
 using CodeStepByStep_CSharp.Classes_and_Object;
 using CodeStepByStep_CSharp.Classes_and_Object.Model;
 using CodeStepByStep_CSharp;
+using CodeStepByStep_CSharp.Collections.Dictionary;
 
 /*     BASICS   
 //NumberLoops.DisplayLoopOutput();
@@ -129,7 +130,7 @@ clock.Advance(21075);   //  4:26 PM  (2 weeks later)
 Console.WriteLine(clock.ToString());
 */
 
-/* Date - AbsoluteDay */
+/* Date - AbsoluteDay 
 Date date = new Date(4, 1);
 date.NextDay();
 Console.WriteLine($"Absolute day: {date.AbsoluteDay()}");
@@ -154,3 +155,11 @@ Date sep19 = new Date(9, 19);
 Console.WriteLine($"Absolute day: {sep19.AbsoluteDay()}"); //263
 Date dec31 = new Date(12, 31);
 Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
+*/
+
+/* Collections */
+
+/* Dictionary */
+string fileName = @"C:\Users\jeffp\source\repos\CodeStepByStep-CSharp\Collections\Dictionary\Names.txt";
+BiggestFamily family = new BiggestFamily(fileName);
+family.ReadFile();
