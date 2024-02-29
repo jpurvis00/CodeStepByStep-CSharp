@@ -106,6 +106,7 @@ Console.WriteLine(stephAccount.ToString());
 //Circle circle = new Circle(2.0);
 //Console.WriteLine(circle.ToString());
 
+/* Clock Advance
 Clock clock = new Clock(6, 27, "PM");
 clock.Advance(-1);       //  6:28 PM
 clock.Advance(1);       //  6:28 PM
@@ -126,4 +127,14 @@ clock.Advance(1440);    //  1:11 AM  (1 day later)
 Console.WriteLine(clock.ToString());
 clock.Advance(21075);   //  4:26 PM  (2 weeks later)
 Console.WriteLine(clock.ToString());
+*/
 
+Date date = new Date(1, 4);
+date.NextDay();
+Console.WriteLine($"{date.ToString()}   Days in {date.GetMonth()}: {date.DaysInMonth()}");
+Date date2 = new Date(30, 6);
+date2.NextDay();
+Console.WriteLine($"{date2.ToString()}   Days in {date2.GetMonth()}: {date2.DaysInMonth()}");
+Date date3 = new Date(31, 12);
+date3.NextDay();
+Console.WriteLine($"{date3.ToString()}   Days in {date3.GetMonth()}: {date3.DaysInMonth()}");
