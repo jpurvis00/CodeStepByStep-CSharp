@@ -165,12 +165,14 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //family.ReadFile();
 
 
-Dictionary<string, int> namesAndAges = new Dictionary<string, int>
-{
-    { "Allison", 18}, { "Benson", 48}, { "David", 20}, { "Erik", 20}, { "Galen", 15}, { "Grace", 25},
-    { "Helene", 40}, { "Janette", 18}, { "Jessica", 35}, { "Marty", 35}, { "Paul", 28}, { "Sara", 15},
-    { "Stuart", 98}, { "Tyler", 6}, { "Zack", 20}
-};
+//Dictionary<string, int> namesAndAges = new Dictionary<string, int>
+//{
+//    { "Allison", 18}, { "Benson", 48}, { "David", 20}, { "Erik", 20}, { "Galen", 15}, { "Grace", 25},
+//    { "Helene", 40}, { "Janette", 18}, { "Jessica", 35}, { "Marty", 35}, { "Paul", 28}, { "Sara", 15},
+//    { "Stuart", 98}, { "Tyler", 6}, { "Zack", 20}
+//};
 
-Dictionary<int, List<string>> namesAndAgesDict = ByAge.RunByAge(namesAndAges, 16, 25);
-ByAge.DisplayDictionary(namesAndAgesDict);
+//Dictionary<int, List<string>> namesAndAgesDict = ByAge.RunByAge(namesAndAges, 16, 25);
+//ByAge.DisplayDictionary(namesAndAgesDict);
+
+CountNames.RunCountNames();
