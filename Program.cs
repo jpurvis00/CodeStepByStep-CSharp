@@ -175,4 +175,6 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //Dictionary<int, List<string>> namesAndAgesDict = ByAge.RunByAge(namesAndAges, 16, 25);
 //ByAge.DisplayDictionary(namesAndAgesDict);
 
-CountNames.RunCountNames();
+//CountNames.RunCountNames();
+string fileName = @"C:\Users\jeffp\source\repos\CodeStepByStep-CSharp\Collections\Dictionary\Buddies.txt";
+FriendList.RunFriendList(fileName);
