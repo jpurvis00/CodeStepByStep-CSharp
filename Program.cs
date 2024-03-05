@@ -176,5 +176,19 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //ByAge.DisplayDictionary(namesAndAgesDict);
 
 //CountNames.RunCountNames();
-string fileName = @"C:\Users\jeffp\source\repos\CodeStepByStep-CSharp\Collections\Dictionary\Buddies.txt";
-FriendList.RunFriendList(fileName);
+
+//string fileName = @"C:\Users\jeffp\source\repos\CodeStepByStep-CSharp\Collections\Dictionary\Buddies.txt";
+//FriendList.RunFriendList(fileName);
+
+Dictionary<string, string> names = new Dictionary<string, string>
+        {
+            { "Hal", "Perkins" }, { "Mark", "Smith" }, { "Mike", "Smith" },
+            { "Stuart", "Reges" }, { "David", "Smith" }, { "Jean", "Reges" },
+            { "Geneva", "Smith" }, { "Amie", "Smith" }, { "Bruce", "Reges" }
+        };
+//Dictionary<string, string> names = new Dictionary<string, string>
+//        {
+//            { "Hal", "Perkins" }
+//        };
+//Dictionary<string, string> names = new Dictionary<string, string>();
+Console.WriteLine($"Majority last name: {GetMajorityLastName.RunGetMajorityLastName(names)}");
