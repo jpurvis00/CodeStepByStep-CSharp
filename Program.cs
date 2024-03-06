@@ -180,15 +180,30 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //string fileName = @"C:\Users\jeffp\source\repos\CodeStepByStep-CSharp\Collections\Dictionary\Buddies.txt";
 //FriendList.RunFriendList(fileName);
 
-Dictionary<string, string> names = new Dictionary<string, string>
-        {
-            { "Hal", "Perkins" }, { "Mark", "Smith" }, { "Mike", "Smith" },
-            { "Stuart", "Reges" }, { "David", "Smith" }, { "Jean", "Reges" },
-            { "Geneva", "Smith" }, { "Amie", "Smith" }, { "Bruce", "Reges" }
-        };
+//Dictionary<string, string> names = new Dictionary<string, string>
+//        {
+//            { "Hal", "Perkins" }, { "Mark", "Smith" }, { "Mike", "Smith" },
+//            { "Stuart", "Reges" }, { "David", "Smith" }, { "Jean", "Reges" },
+//            { "Geneva", "Smith" }, { "Amie", "Smith" }, { "Bruce", "Reges" }
+//        };
 //Dictionary<string, string> names = new Dictionary<string, string>
 //        {
 //            { "Hal", "Perkins" }
 //        };
 //Dictionary<string, string> names = new Dictionary<string, string>();
-Console.WriteLine($"Majority last name: {GetMajorityLastName.RunGetMajorityLastName(names)}");
+//Console.WriteLine($"Majority last name: {GetMajorityLastName.RunGetMajorityLastName(names)}");
+
+//Dictionary<string, string> hasDuplicatValue = new Dictionary<string, string>
+//{
+//    {"Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"}, 
+//    { "Amanda", "Camp"}, { "Meghan", "Miller"}, { "Hal", "Perkins"}
+//};
+Dictionary<string, string> hasDuplicatValue = new Dictionary<string, string>
+{
+    {"Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"},
+    { "Amanda", "Camp"}, { "Hal", "Perkins"}, { "Joe", "Camp"}
+};
+Dictionary<string, string> sortedDictionary = hasDuplicatValue.OrderBy(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+Console.WriteLine($"Dictionary has duplicates: {HasDuplicateValue.RunHasDuplicateValue(sortedDictionary)}");
+
+
