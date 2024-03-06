@@ -198,12 +198,14 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //    {"Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"}, 
 //    { "Amanda", "Camp"}, { "Meghan", "Miller"}, { "Hal", "Perkins"}
 //};
-Dictionary<string, string> hasDuplicatValue = new Dictionary<string, string>
-{
-    {"Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"},
-    { "Amanda", "Camp"}, { "Hal", "Perkins"}, { "Joe", "Camp"}
-};
-Dictionary<string, string> sortedDictionary = hasDuplicatValue.OrderBy(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
-Console.WriteLine($"Dictionary has duplicates: {HasDuplicateValue.RunHasDuplicateValue(sortedDictionary)}");
+//Dictionary<string, string> hasDuplicatValue = new Dictionary<string, string>
+//{
+//    {"Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"},
+//    { "Amanda", "Camp"}, { "Hal", "Perkins"}, { "Joe", "Camp"}
+//};
+//Dictionary<string, string> sortedDictionary = hasDuplicatValue.OrderBy(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+//Console.WriteLine($"Dictionary has duplicates: {HasDuplicateValue.RunHasDuplicateValue(sortedDictionary)}");
 
+string[] input = new string[] { "to", "or", "be", "to", "be", "hamlet" };
+Console.WriteLine($"A word occurs 3 times or more: {HasThree.RunHasThree(input)}");
 
