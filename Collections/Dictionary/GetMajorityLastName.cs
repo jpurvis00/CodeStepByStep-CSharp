@@ -33,7 +33,7 @@ namespace CodeStepByStep_CSharp.Collections.Dictionary
     {
         public static string RunGetMajorityLastName(Dictionary<string, string> names)
         {
-            string? result = null;
+            string result = String.Empty;
 
             var lastNames = CreateLastNameDict(names);
             result = FindMostCommonLastName(lastNames, names.Count);
@@ -43,7 +43,7 @@ namespace CodeStepByStep_CSharp.Collections.Dictionary
 
         private static string FindMostCommonLastName(Dictionary<string, int> lastNames, int dictionaryCount)
         {
-            string? mostCommonLastName = null;
+            string mostCommonLastName = String.Empty;
             int highestNumber = 0;
 
             if (lastNames == null || lastNames.Count == 0)
