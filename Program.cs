@@ -206,6 +206,19 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //Dictionary<string, string> sortedDictionary = hasDuplicatValue.OrderBy(x => x.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
 //Console.WriteLine($"Dictionary has duplicates: {HasDuplicateValue.RunHasDuplicateValue(sortedDictionary)}");
 
-string[] input = new string[] { "to", "or", "be", "to", "be", "hamlet" };
-Console.WriteLine($"A word occurs 3 times or more: {HasThree.RunHasThree(input)}");
+//string[] input = new string[] { "to", "be", "or", "be", "to", "be", "hamlet" };
+//string[] input = new string[] { "to", "or", "be", "to", "be", "hamlet" };
+//Console.WriteLine($"A word occurs 3 times or more: {HasThree.RunHasThree(input)}");
+
+Dictionary<string, int> map1 = new Dictionary<string, int> 
+{
+    { "Janet", 87}, { "Logan", 62}, { "Whitaker", 46}, { "Alyssa", 100}, { "Stefanie", 80}, { "Jeff", 88}, { "Kim", 52}, { "Sylvia", 95}
+};
+
+Dictionary<string, int> map2 = new Dictionary<string, int>
+{
+    { "Logan", 62}, { "Kim", 52}, { "Whitaker", 52}, { "Jeff", 88}, { "Stefanie", 80}, { "Brian", 60}, { "Lisa", 83}, { "Sylvia", 87}
+};
+
+Intersect.RunIntersect(map1, map2);
 
