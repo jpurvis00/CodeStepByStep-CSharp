@@ -199,7 +199,7 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //    { "Amanda", "Camp"}, { "Meghan", "Miller"}, { "Hal", "Perkins"}
 //};
 //Dictionary<string, string> hasDuplicatValue = new Dictionary<string, string>
-//{
+//{dict
 //    {"Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"},
 //    { "Amanda", "Camp"}, { "Hal", "Perkins"}, { "Joe", "Camp"}
 //};
@@ -211,7 +211,7 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //Console.WriteLine($"A word occurs 3 times or more: {HasThree.RunHasThree(input)}");
 
 //Dictionary<string, int> map1 = new Dictionary<string, int> 
-//{
+//{dict
 //    { "Janet", 87}, { "Logan", 62}, { "Whitaker", 46}, { "Alyssa", 100}, { "Stefanie", 80}, { "Jeff", 88}, { "Kim", 52}, { "Sylvia", 95}
 //};
 
@@ -222,22 +222,34 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 
 //Intersect.RunIntersect(map1, map2);
 
-Dictionary<string, string> dict1 = new Dictionary<string, string>
-{
-    { "Smith", "949-0504"}, { "Marty", "206-9024"}
-};
-Dictionary<string, string> dict2 = new Dictionary<string, string>
-{ 
-    { "Marty", "206-9024"}, { "Hawking", "123-4567"}, { "Smith", "949-0504"}, { "Newton", "123-4567"}
-};
-Dictionary<string, string> dict3 = new Dictionary<string, string>
-{ 
-    { "Alisha", "321-7654"}, { "Hawking", "123-4567"}, { "Smith", "888-8888"}
-};
-Dictionary<string, string> dict4 = new Dictionary<string, string> { };
+//Dictionary<string, string> dict1 = new Dictionary<string, string>
+//{
+//    { "Smith", "949-0504"}, { "Marty", "206-9024"}
+//};
+//Dictionary<string, string> dict2 = new Dictionary<string, string>
+//{ 
+//    { "Marty", "206-9024"}, { "Hawking", "123-4567"}, { "Smith", "949-0504"}, { "Newton", "123-4567"}
+//};
+//Dictionary<string, string> dict3 = new Dictionary<string, string>
+//{ 
+//    { "Alisha", "321-7654"}, { "Hawking", "123-4567"}, { "Smith", "888-8888"}
+//};
+//Dictionary<string, string> dict4 = new Dictionary<string, string> { };
 
-Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict1, dict2)}"); //Should be true
-Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict2, dict1)}"); //Should be false
-Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict3, dict2)}"); //Should be false
-Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict4, dict1)}"); //Should be true
+//Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict1, dict2)}"); //Should be true
+//Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict2, dict1)}"); //Should be false
+//Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict3, dict2)}"); //Should be false
+//Console.WriteLine($"The dictionary is a sub-dictionary: {IsSubDictionary.RunIsSubDictionary(dict4, dict1)}"); //Should be true
+
+//Dictionary<string, string> dict = new Dictionary<string, string>
+//{
+//    { "Marty", "Stepp"}, { "Stuart", "Reges"}, { "Jessica", "Miller"}, { "Amanda", "Camp"}, { "Hal", "Perkins"}
+//};
+//Dictionary<string, string> dict = new Dictionary<string, string>
+//{
+//    { "Kendrick", "Perkins"}, { "Stuart", "Reges"}, { "Jessica", "Miller"}, { "Bruce", "Reges"}, { "Hal", "Perkins"}
+//};
+Dictionary<string, string> dict = new Dictionary<string, string>();
+
+Console.WriteLine($"The dictionary values are unique: {IsUnique.RunIsUnique(dict)}");
 
