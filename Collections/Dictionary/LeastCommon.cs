@@ -7,9 +7,6 @@
 //the call of LeastCommon(m) returns 22. If there is a tie, return the smaller
 //integer value. If the dictionary is empty, throw an ArgumentException.
 
-
-using System.Runtime.InteropServices;
-
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class LeastCommon
