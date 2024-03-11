@@ -253,16 +253,16 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 
 //Console.WriteLine($"The dictionary values are unique: {IsUnique.RunIsUnique(dict)}");
 
-Dictionary<string, int> names = new Dictionary<string, int>
-{
-    { "Allison L. Smith", 18}, { "Benson Kai Lim", 48}, { "David L Shaw", 20}, { "Erik Thomas Jones", 20},
-    { "Galen Wood", 15}, { "Madonna", 25}, { "Helene Q. Martin", 40}, { "Janette Siu", 18},
-    { "Jessica K. Miller", 35}, { "Marty Douglas Stepp", 35}, { "Paul Beame", 28}, { "Sara de la Pizza", 15},
-    { "Stuart T. Reges", 98}, { "Tyler Rigs", 6}, { "Prince", 20}
-};
+//Dictionary<string, int> names = new Dictionary<string, int>
+//{
+//    { "Allison L. Smith", 18}, { "Benson Kai Lim", 48}, { "David L Shaw", 20}, { "Erik Thomas Jones", 20},
+//    { "Galen Wood", 15}, { "Madonna", 25}, { "Helene Q. Martin", 40}, { "Janette Siu", 18},
+//    { "Jessica K. Miller", 35}, { "Marty Douglas Stepp", 35}, { "Paul Beame", 28}, { "Sara de la Pizza", 15},
+//    { "Stuart T. Reges", 98}, { "Tyler Rigs", 6}, { "Prince", 20}
+//};
 
-LastNamesByAge namesByAge = new LastNamesByAge(names);
+//LastNamesByAge namesByAge = new LastNamesByAge(names);
 
-int minAge, maxAge;
-namesByAge.RunLastNamesByAge(minAge = 20, maxAge = 40);
+//int minAge, maxAge;
+//namesByAge.RunLastNamesByAge(minAge = 20, maxAge = 40);
 
