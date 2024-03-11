@@ -21,7 +21,7 @@
 //the following key/value pairs:
 
 //{
-//    { "Allison L. Smith", 18}, { "Benson Kai Lim", 48}, { "David L Shaw", 20}, { "Erik Thomas Jones", 20},
+// { "Allison L. Smith", 18}, { "Benson Kai Lim", 48}, { "David L Shaw", 20}, { "Erik Thomas Jones", 20},
 // { "Galen Wood", 15}, { "Madonna", 25}, { "Helene Q. Martin", 40}, { "Janette Siu", 18},
 // { "Jessica K. Miller", 35}, { "Marty Douglas Stepp", 35}, { "Paul Beame", 28}, { "Sara de la Pizza", 15},
 // { "Stuart T. Reges", 98}, { "Tyler Rigs", 6}, { "Prince", 20}
