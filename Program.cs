@@ -266,12 +266,17 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //int minAge, maxAge;
 //namesByAge.RunLastNamesByAge(minAge = 20, maxAge = 40);
 
-Dictionary<string, int> m = new Dictionary<string, int>
-{
-    { "Alyssa", 22}, { "Char", 25}, { "Dan", 25}, { "Jeff", 20},
-    { "Kasey", 20}, { "Kim", 20}, { "Mogran", 25}, { "Ryan", 25}, 
-    { "Stef", 22}
-};
+//Dictionary<string, int> m = new Dictionary<string, int>
+//{
+//    { "Alyssa", 22}, { "Char", 25}, { "Dan", 25}, { "Jeff", 20},
+//    { "Kasey", 20}, { "Kim", 20}, { "Mogran", 25}, { "Ryan", 25}, 
+//    { "Stef", 22}, { "jeff", 22 }
+//};
+//Dictionary<string, int> m = new Dictionary<string, int>
+//{
+//    { "jeff", 22 }
+//};
+Dictionary<string, int> m = new Dictionary<string, int>();
 
-LeastCommon.RunLeastCommon(m);
+Console.WriteLine($"The least common number is: {LeastCommon.RunLeastCommon(m)}");
 
