@@ -276,9 +276,15 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //{
 //    { "jeff", 22 }
 //};
-Dictionary<string, int> m = new Dictionary<string, int>();
+//Dictionary<string, int> m = new Dictionary<string, int>();
 
-Console.WriteLine($"The least common number is: {LeastCommon.RunLeastCommon(m)}");
+//Console.WriteLine($"The least common number is: {LeastCommon.RunLeastCommon(m)}");
+
+//List<int> list = new List<int> { 43, 43, 43, 43, 42, 37, 1, 97, 1, 2, 7, 42, 3, 25, 89, 15, 10, 29, 27, -1, -1, -1 };
+//Console.WriteLine($"The number that occurs the most is: {MaxOccurences.RunMaxOccurences(list)}");
+
+List<string> list = new List<string> { "banana", "bends", "i", "mend", "sandy" };
+PairFrequencies.RunPairFrequencies(list);
 
 
 //jeff test
