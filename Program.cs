@@ -264,7 +264,7 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //LastNamesByAge namesByAge = new LastNamesByAge(names);
 
 //int minAge, maxAge;
-//namesByAge.RunLastNamesByAge(minAge = 20, maxAge = 40);
+//namesByAge.RunLastName sByAge(minAge = 20, maxAge = 40);
 
 //Dictionary<string, int> m = new Dictionary<string, int>
 //{
@@ -286,18 +286,28 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //List<string> list = new List<string> { "banana", "bends", "i", "mend", "sandy" };
 //PairFrequencies.RunPairFrequencies(list);
 
-Dictionary<string, int> people = new Dictionary<string, int>
+//Dictionary<string, int> people = new Dictionary<string, int>
+//{
+//   { "Ally T Obern", 85704}, { "Madonna", 11430}, { "David Q Shaw", 90045}, { "Mike Tom Brooks", 85704},
+//   { "Jerry Cain", 11430}, { "Kate Jan Martin", 68052}, { "Jane Su", 68052}, { "Jessica K. R. Miller", 94305},
+//   { "Marty Doug Stepp", 95050}, { "Nick T", 94305}, { "Sara de la Pizza", 68052}, { "Stu T. Reges", 94305},
+//   { "Prince", 94305}, { "Dany Khaleesi Mother of Dragons Targaryen", 9999999}
+//};
+
+//Dictionary<int, string> cities = new Dictionary<int, string>
+//{
+//   { 11430, "NewYork"}, { 22222, "Duluth"}, { 68052, "Springfield"}, { 71384, "Omaha"}, { 85704, "Tucson"},
+//   { 90045, "Redmond"}, { 94305, "Stanford"}, { 95050, "SantaClara"}, { 9999999, "Westeros"}
+//};
+
+//PostalService.RunPostalService(people, cities);
+
+//Dictionary<string, string> names = new Dictionary<string, string>();
+Dictionary<string, string> names = new Dictionary<string, string>
 {
-   { "Ally T Obern", 85704}, { "Madonna", 11430}, { "David Q Shaw", 90045}, { "Mike Tom Brooks", 85704},
-   { "Jerry Cain", 11430}, { "Kate Jan Martin", 68052}, { "Jane Su", 68052}, { "Jessica K. R. Miller", 94305},
-   { "Marty Doug Stepp", 95050}, { "Nick T", 94305}, { "Sara de la Pizza", 68052}, { "Stu T. Reges", 94305},
-   { "Prince", 94305}, { "Dany Khaleesi Mother of Dragons Targaryen", 9999999}
+ {"steph", "Jones"}, {"Alyssa", "Harding"}, { "Char", "Smith"}, { "Dan", "Smith"}, { "Jeff", "Jones"}, { "Kasey", "Jones"},
+ { "Kim", "Smith"}, { "Morgan", "Jones"}, { "Ryan", "Smith"}, { "Stef", "Harding"} 
 };
 
-Dictionary<int, string> cities = new Dictionary<int, string>
-{
-   { 11430, "NewYork"}, { 22222, "Duluth"}, { 68052, "Springfield"}, { 71384, "Omaha"}, { 85704, "Tucson"},
-   { 90045, "Redmond"}, { 94305, "Stanford"}, { 95050, "SantaClara"}, { 9999999, "Westeros"}
-};
-
-PostalService.RunPostalService(people, cities);
+Rarest rare = new Rarest(names);
+Console.WriteLine($"Rarest name: {rare.RunRarest()}");
