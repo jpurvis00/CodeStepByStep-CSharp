@@ -283,12 +283,21 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //List<int> list = new List<int> { 43, 43, 43, 43, 42, 37, 1, 97, 1, 2, 7, 42, 3, 25, 89, 15, 10, 29, 27, -1, -1, -1 };
 //Console.WriteLine($"The number that occurs the most is: {MaxOccurences.RunMaxOccurences(list)}");
 
-List<string> list = new List<string> { "banana", "bends", "i", "mend", "sandy" };
-PairFrequencies.RunPairFrequencies(list);
+//List<string> list = new List<string> { "banana", "bends", "i", "mend", "sandy" };
+//PairFrequencies.RunPairFrequencies(list);
 
+Dictionary<string, int> people = new Dictionary<string, int>
+{
+   { "Ally T Obern", 85704}, { "Madonna", 11430}, { "David Q Shaw", 90045}, { "Mike Tom Brooks", 85704},
+   { "Jerry Cain", 11430}, { "Kate Jan Martin", 68052}, { "Jane Su", 68052}, { "Jessica K. R. Miller", 94305},
+   { "Marty Doug Stepp", 95050}, { "Nick T", 94305}, { "Sara de la Pizza", 68052}, { "Stu T. Reges", 94305},
+   { "Prince", 94305}, { "Dany Khaleesi Mother of Dragons Targaryen", 9999999}
+};
 
+Dictionary<int, string> cities = new Dictionary<int, string>
+{
+   { 11430, "NewYork"}, { 22222, "Duluth"}, { 68052, "Springfield"}, { 71384, "Omaha"}, { 85704, "Tucson"},
+   { 90045, "Redmond"}, { 94305, "Stanford"}, { 95050, "SantaClara"}, { 9999999, "Westeros"}
+};
 
-//edit line 290 in dev
-
-//edit line 290 in main 
-
+PostalService.RunPostalService(people, cities);
