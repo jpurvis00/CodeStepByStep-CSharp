@@ -303,11 +303,20 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //PostalService.RunPostalService(people, cities);
 
 //Dictionary<string, string> names = new Dictionary<string, string>();
-Dictionary<string, string> names = new Dictionary<string, string>
-{
- {"steph", "Jones"}, {"Alyssa", "Harding"}, { "Char", "Smith"}, { "Dan", "Smith"}, { "Jeff", "Jones"}, { "Kasey", "Jones"},
- { "Kim", "Smith"}, { "Morgan", "Jones"}, { "Ryan", "Smith"}, { "Stef", "Harding"} 
-};
+//Dictionary<string, string> names = new Dictionary<string, string>
+//{
+// {"steph", "Jones"}, {"Alyssa", "Harding"}, { "Char", "Smith"}, { "Dan", "Smith"}, { "Jeff", "Jones"}, { "Kasey", "Jones"},
+// { "Kim", "Smith"}, { "Morgan", "Jones"}, { "Ryan", "Smith"}, { "Stef", "Harding"} 
+//};
 
-Rarest rare = new Rarest(names);
-Console.WriteLine($"Rarest name: {rare.RunRarest()}");
+//Rarest rare = new Rarest(names);
+//Console.WriteLine($"Rarest name: {rare.RunRarest()}");
+
+//Dictionary<string, int> namesAndAges = new Dictionary<string, int>();
+Dictionary<string, int> namesAndAges = null;
+//{
+// { "Char", 45}, { "Mehran", 23},{ "Kim", 10},{ "Dan", 45}, { "Jerry", 23}, { "Kasey", 10}, { "Jeff", 10},
+// { "Elmer", 45},  {"steph", 23 }
+//};
+
+Console.WriteLine($"The age the occurrs the least is: {RarestAge.RunRarestAge(namesAndAges)}");
