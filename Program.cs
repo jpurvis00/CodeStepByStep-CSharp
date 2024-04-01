@@ -322,9 +322,13 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 
 //Console.WriteLine($"The age the occurrs the least is: {RarestAge.RunRarestAge(namesAndAges)}");
 
-Dictionary<int, string> reverse = new Dictionary<int, string>
-{
-    { 42, "Marty"}, { 81, "Sue"}, { 17, "Ed"}, { 31, "Dave"}, { 56, "Ed"}, { 3, "Marty"}, { 29, "Ed"}
-};
+//Dictionary<int, string> reverse = new Dictionary<int, string>
+//{
+//    { 42, "Marty"}, { 81, "Sue"}, { 17, "Ed"}, { 31, "Dave"}, { 56, "Ed"}, { 3, "Marty"}, { 29, "Ed"}
+//};
 
-Reverse.RunReverse(reverse);
+//Reverse.RunReverse(reverse);
+
+List<string> list = new List<string> { "hi", "how", "are", "He", "", "Marty!", "this", "morning?", "fine.", "?foo!", "", "HOW", "A"};
+
+Starters.RunStarters(list, 2);
