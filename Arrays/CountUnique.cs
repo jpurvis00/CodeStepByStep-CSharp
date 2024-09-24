@@ -18,35 +18,78 @@ namespace CodeStepByStep_CSharp.Arrays
 {
     internal class CountUnique
     {
-        public static int CountUniqueNumbers(int[] array)
+        public static void CountUniqueNumbers(int[] array)
         {
-            if (array == null || array.Length == 0)
+            int uniqueCount = 0;
+
+            if (array == null || array.Length < 0)
             {
-                return 0; 
+                Console.WriteLine("0");
             }
 
-            int uniqueCount = 1; 
-
-            for (int i = 1; i < array.Length; i++)
+            if (array != null)
             {
-                bool isUnique = true;
+                uniqueCount++;
 
-                for (int j = 0; j < i; j++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    if (array[i] == array[j])
+                    if (i + 1 < array.Length)
                     {
-                        isUnique = false;
-                        break;
+                        int count = 0;
+                        for (int j = i + 1; j < array.Length; j++)
+                        {
+                            if (array[i] == array[j])
+                            {
+                                count++;
+                            }
+                        }
+
+                        if (count == 0)
+                        {
+                            uniqueCount++;
+
+                        }
                     }
                 }
-
-                if (isUnique)
-                {
-                    uniqueCount++;
-                }
             }
-
-            return uniqueCount;
+            Console.WriteLine(uniqueCount);
         }
+
+
+
+
+
+
+        //        public static int CountUniqueNumbers(int[] array)
+        //        {
+        //            if (array == null || array.Length == 0)
+        //            {
+        //                return 0; 
+        //            }
+        //
+        //            int uniqueCount = 1; 
+        //
+        //            for (int i = 1; i < array.Length; i++)
+        //            {
+        //                bool isUnique = true;
+        //
+        //                for (int j = 0; j < i; j++)
+        //                {
+        //                    if (array[i] == array[j])
+        //                    {
+        //                        isUnique = false;
+        //                        break;
+        //                    }
+        //                }
+        //
+        //                if (isUnique)
+        //                {
+        //                    uniqueCount++;
+        //                }
+        //            }
+        //
+        //            return uniqueCount;
+        //        }
+        //    }
     }
 }

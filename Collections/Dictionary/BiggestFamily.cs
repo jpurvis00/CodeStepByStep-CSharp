@@ -1,4 +1,5 @@
 ﻿
+
 //Write a method named BiggestFamily that reads an input file of people's
 //names and prints information about which family has the most people in it.
 //Your method accepts a string parameter representing a filename of input.
@@ -58,96 +59,192 @@
 //not count as a second structure. (You can have as many simple variables as you like, such as ints or strings.)
 
 
+
+
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class BiggestFamily
     {
-        public StreamReader reader;
-
-        public BiggestFamily(string fileName)
+        public static void GetBiggestFamily()
         {
-            reader = new StreamReader(fileName); 
-        }
+            Dictionary<string, List<string>> families = new Dictionary<string, List<string>>();
+            string fileLocation = @"C:\\Users\\jeffp\\source\\repos\\CodeStepByStep-CSharp\\Collections\\Dictionary\\Names.txt";
+            List<string> mostFamilyMembers = new List<string>();
 
-        public Dictionary<string, List<string>> Families { get; set; } = new Dictionary<string, List<string>>();
+            IEnumerable<string> lines = File.ReadLines(fileLocation);
 
-        public void ReadFile()
-        {
-            try
+            foreach (string line in lines)
             {
-                string line = reader.ReadLine();
+                string[] name = line.Split(' ');
 
-                while (line != null)
+                if (!families.ContainsKey(name[1]))
                 {
-                    InsertIntoDictionary(line);
-                    
-                    line = reader.ReadLine();
+                    families.Add(name[1], new List<string>());
+                    families[name[1]].Add(name[0]);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception" + ex.Message);
+                else
+                {
+                    families[name[1]].Add(name[0]);
+                }
+                //Console.WriteLine(line);
             }
 
-            int biggestFamily = FindBiggestFamily();
-            DisplayBiggestFamilies(biggestFamily);
+            int biggestFamily = FindEntryWithMostFamilyMembers(families);
+
+            DisplayBiggestFamilies(biggestFamily, families);
+
         }
 
-        private void DisplayBiggestFamilies(int biggestFamily)
+        private static void DisplayBiggestFamilies(int biggestFamily, Dictionary<string, List<string>> families)
         {
-            var sortedDictionary = Families.OrderBy(x => x.Key);
-
-            foreach(var family in sortedDictionary)
+            foreach (var family in families)
             {
                 if (family.Value.Count == biggestFamily)
                 {
-                    Console.Write($"{family.Key} family: ");
-
-                    family.Value.Sort();
+                    int i = 1;
+                    Console.WriteLine($"Family: {family.Key}");
 
                     foreach (var name in family.Value)
                     {
-                        Console.Write($"{name} ");
+                        if (i < biggestFamily)
+                        {
+                            Console.Write($"{name}, ");
+                        }
+                        else
+                        {
+                            Console.Write($"{name} ");
+                        }
+                        i++;
                     }
-                    Console.WriteLine();
+                    Console.WriteLine("\n");
                 }
             }
         }
 
-        private int FindBiggestFamily()
+        private static int FindEntryWithMostFamilyMembers(Dictionary<string, List<string>> families)
         {
-            int biggestFamily = 0;
+            List<string> mostFamilyMembers = new List<string>();
+            int count = 0;
 
-            foreach(var family in Families)
+            foreach (var family in families)
             {
-                if (family.Value.Count > biggestFamily)
+                if (family.Value.Count > count)
                 {
-                    biggestFamily = family.Value.Count;
+                    count = family.Value.Count;
                 }
             }
 
-            return biggestFamily;
+            return count;
         }
 
-        private void InsertIntoDictionary(string line)
-        {
-            string[] names;
 
-            names = line.Split(' ');
 
-            //Create new dict entry if the last name does not exist as a key
-            if (Families.ContainsKey(names[1]) == false)
-            {
-                Families.Add(names[1], new List<string>());
-            }
 
-            /* If the last name is a key and they first name does not exist in the list,
-             * add it.
-             */
-            if (Families.ContainsKey(names[1]) && (Families[names[1]].Contains(names[0]) == false))
-            {
-                Families[names[1]].Add(names[0]);
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public StreamReader reader;
+
+        //public BiggestFamily(string fileName)
+        //{
+        //    reader = new StreamReader(fileName); 
+        //}
+
+        //public Dictionary<string, List<string>> Families { get; set; } = new Dictionary<string, List<string>>();
+
+        //public void ReadFile()
+        //{
+        //    try
+        //    {
+        //        string line = reader.ReadLine();
+
+        //        while (line != null)
+        //        {
+        //            InsertIntoDictionary(line);
+        //            
+        //            line = reader.ReadLine();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Exception" + ex.Message);
+        //    }
+
+        //    int biggestFamily = FindBiggestFamily();
+        //    DisplayBiggestFamilies(biggestFamily);
+        //}
+
+        //private void DisplayBiggestFamilies(int biggestFamily)
+        //{
+        //    var sortedDictionary = Families.OrderBy(x => x.Key);
+
+        //    foreach(var family in sortedDictionary)
+        //    {
+        //        if (family.Value.Count == biggestFamily)
+        //        {
+        //            Console.Write($"{family.Key} family: ");
+
+        //            family.Value.Sort();
+
+        //            foreach (var name in family.Value)
+        //            {
+        //                Console.Write($"{name} ");
+        //            }
+        //            Console.WriteLine();
+        //        }
+        //    }
+        //}
+
+        //private int FindBiggestFamily()
+        //{
+        //    int biggestFamily = 0;
+
+        //    foreach(var family in Families)
+        //    {
+        //        if (family.Value.Count > biggestFamily)
+        //        {
+        //            biggestFamily = family.Value.Count;
+        //        }
+        //    }
+
+        //    return biggestFamily;
+        //}
+
+        //private void InsertIntoDictionary(string line)
+        //{
+        //    string[] names;
+
+        //    names = line.Split(' ');
+
+        //    //Create new dict entry if the last name does not exist as a key
+        //    if (Families.ContainsKey(names[1]) == false)
+        //    {
+        //        Families.Add(names[1], new List<string>());
+        //    }
+
+        //    /* If the last name is a key and they first name does not exist in the list,
+        //     * add it.
+        //     */
+        //    if (Families.ContainsKey(names[1]) && (Families[names[1]].Contains(names[0]) == false))
+        //    {
+        //        Families[names[1]].Add(names[0]);
+        //    }
+        //}
     }
 }

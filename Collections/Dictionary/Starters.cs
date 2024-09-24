@@ -1,4 +1,6 @@
 ﻿
+//using Dumpify;
+
 //Write a method named Starters that accepts two parameters: a list of strings, and an integer k.
 //Your method should examine the strings in the list passed and return a set of all first
 //characters that occur at least k times. In other words, if k or more strings in the list start
@@ -28,79 +30,157 @@
 //Declare your method in such a way that any caller can be sure that this will not happen.
 //Your solution should run in no worse than O(N log N) time, where N is the number of pairs in the dictionary.
 
-
-using System.Runtime.CompilerServices;
+using Dumpify;
 
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class Starters
     {
-        private static List<string>? _listOfString;
 
-        public static void RunStarters(List<string> list, int numbOfOccurrences)
+        public static void RunStarters()
         {
-            _listOfString = list;
-            
-            Dictionary<char, int> starters = CreateDictionary(list);
-            List<char> letters = CreateList(starters, numbOfOccurrences);
-            DisplayDictionary(starters);
-            DisplayListOfOccurrences(letters);
-        }
+            List<string> words = new()
+                { "hi", "how", "are", "He", "", "Marty!", "this", "morning?", "fine.", "?foo!", "", "HOW", "A" };
 
-        private static void DisplayListOfOccurrences(List<char> letters)
-        {
-            foreach (char c in letters)
+            Dictionary<char, int> charCount = new();
+
+            foreach (string word in words)
             {
-                Console.Write($"'{c}' ");
-            }
-        }
-
-        private static List<char> CreateList(Dictionary<char, int> starters, int numbOfOccurrences)
-        {
-            List<char> list = new List<char>();
-            
-            foreach (var key in starters)
-            {
-                if (key.Value >= numbOfOccurrences)
+                if (word.Length != 0)
                 {
-                    list.Add(key.Key);
-                }
-            }
-            
-            list.Sort();
-            return list;
-        }
-
-        private static void DisplayDictionary(Dictionary<char, int> starters)
-        {
-            foreach (var key in starters)
-            {
-                Console.WriteLine($"Key: {key}  Value: {key.Value}");
-            }
-        }
-
-        private static Dictionary<char, int> CreateDictionary(List<string> list)
-        {
-            Dictionary<char, int> starters = new Dictionary<char, int>();
-            
-            foreach (string str in list)
-            {
-                if (String.IsNullOrEmpty(str) == false)
-                {
-                    string lowerCaseString = str.ToLower();
-                    
-                    if (starters.ContainsKey(lowerCaseString[0]) == false)
+                    if (!charCount.ContainsKey(Char.ToLower(word[0])))
                     {
-                        starters.Add(lowerCaseString[0], 1);
+                        charCount.Add(Char.ToLower(word[0]), 1);
                     }
                     else
                     {
-                        starters[lowerCaseString[0]]++;
+                        charCount[Char.ToLower(word[0])]++;
                     }
                 }
             }
 
-            return starters;
+            ShowListGreaterOrEqualToValue(charCount, 1);
+
+            charCount.DumpConsole();
         }
+
+        private static void ShowListGreaterOrEqualToValue(Dictionary<char, int> charCount, int v)
+        {
+            List<char> results = new();
+
+            foreach (KeyValuePair<char, int> character in charCount)
+            {
+                if (character.Value >= v)
+                {
+                    results.Add(character.Key);
+                }
+            }
+
+            results.DumpConsole();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private static List<string>? _listOfString;
+
+        //public static void RunStarters(List<string> list, int numbOfOccurrences)
+        //{
+        //    _listOfString = list;
+        //    
+        //    Dictionary<char, int> starters = CreateDictionary(list);
+        //    List<char> letters = CreateList(starters, numbOfOccurrences);
+        //    DisplayDictionary(starters);
+        //    DisplayListOfOccurrences(letters);
+        //}
+
+        //private static void DisplayListOfOccurrences(List<char> letters)
+        //{
+        //    foreach (char c in letters)
+        //    {
+        //        Console.Write($"'{c}' ");
+        //    }
+        //}
+
+        //private static List<char> CreateList(Dictionary<char, int> starters, int numbOfOccurrences)
+        //{
+        //    List<char> list = new List<char>();
+        //    
+        //    foreach (var key in starters)
+        //    {
+        //        if (key.Value >= numbOfOccurrences)
+        //        {
+        //            list.Add(key.Key);
+        //        }
+        //    }
+        //    
+        //    list.Sort();
+        //    return list;
+        //}
+
+        //private static void DisplayDictionary(Dictionary<char, int> starters)
+        //{
+        //    foreach (var key in starters)
+        //    {
+        //        Console.WriteLine($"Key: {key}  Value: {key.Value}");
+        //    }
+        //}
+
+        //private static Dictionary<char, int> CreateDictionary(List<string> list)
+        //{
+        //    Dictionary<char, int> starters = new Dictionary<char, int>();
+        //    
+        //    foreach (string str in list)
+        //    {
+        //        if (String.IsNullOrEmpty(str) == false)
+        //        {
+        //            string lowerCaseString = str.ToLower();
+        //            
+        //            if (starters.ContainsKey(lowerCaseString[0]) == false)
+        //            {
+        //                starters.Add(lowerCaseString[0], 1);
+        //            }
+        //            else
+        //            {
+        //                starters[lowerCaseString[0]]++;
+        //            }
+        //        }
+        //    }
+
+        //    return starters;
+        //}
     }
 }

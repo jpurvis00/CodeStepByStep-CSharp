@@ -30,24 +30,24 @@ namespace CodeStepByStep_CSharp.Arrays
     {
         public static bool RunContains(int[] a1, int[] a2)
         {
-            bool consecutiveSequence = false;
-
             for (int i = 0; i < a1.Length; i++)
             {
+                bool consecutive = false;
                 for (int j = 0; j < a2.Length; j++)
                 {
-                    if (a1[i + j] == a2[j])
+                    if (a2[j] == a1[i] && i + 1 < a1.Length)
                     {
-                        consecutiveSequence = true;                        
+                        consecutive = true;
+                        i++;
                     }
                     else
                     {
-                        consecutiveSequence = false;
+                        consecutive = false;
                         break;
                     }
                 }
 
-                if (consecutiveSequence == true)
+                if (consecutive)
                 {
                     return true;
                 }
@@ -55,5 +55,33 @@ namespace CodeStepByStep_CSharp.Arrays
 
             return false;
         }
+
+        //public static bool RunContains(int[] a1, int[] a2)
+        //{
+        //    bool consecutiveSequence = false;
+
+        //    for (int i = 0; i < a1.Length; i++)
+        //    {
+        //        for (int j = 0; j < a2.Length; j++)
+        //        {
+        //            if (a1[i + j] == a2[j])
+        //            {
+        //                consecutiveSequence = true;                        
+        //            }
+        //            else
+        //            {
+        //                consecutiveSequence = false;
+        //                break;
+        //            }
+        //        }
+
+        //        if (consecutiveSequence == true)
+        //        {
+        //            return true;
+        //        }
+        //    }
+
+        //    return false;
+        //}
     }
 }

@@ -46,48 +46,113 @@ namespace CodeStepByStep_CSharp.Arrays
 {
     public class HasMirrorTwice
     {
-
-        public static bool RunHasMirrorTwice(int[] a, int[] b)
+        //public static bool RunHasMirrorTwice(int[] a, int[] b)
+        public static bool RunHasMirrorTwice()
         {
-            int count = 0;
-            int totalCount = 0;
+            //int[] a = { 5, 8, 4, 18, 5, 42, 4, 8, 5, 5 };
+            //int[] b = { 4, 8, 5 };
+            //int[] a = { 6, 3, 42, 18, 12, 5, 3, 42, 3, 42 };
+            //int[] b = { 42, 3 };
+            int[] a = { 6, 1, 2, 4, 2, 1, 2, 4, 2, 1, 5 };
+            int[] b = { 1, 2, 4, 2, 1 };
+            int hasMirrorTwice = 0;
+            int k = 0;
 
-            for(int i = 0; i < a.Length; i++)
+            for (int i = 0; i < a.Length; i++)
             {
-                int k = i;
-                
-                for(int j = b.Length - 1; j >= 0; j--)
+                int count = 0;
+                k = i;
+
+                if (a[i] == b[b.Length - 1])
                 {
-                    if(k < a.Length)
+                    for (int j = b.Length - 1; j >= 0; j--)
                     {
-                        if (a[k] == b[j])
+                        if ((i + count) < a.Length && a[i + count] == b[j])
                         {
-                            k++;
                             count++;
                         }
-                        else
-                        {
-                            count = 0;
-                            break;
-                        }
-
-                        if (count >= b.Length)
-                        {
-                            totalCount++;
-                            break;
-                        }
+                    }
+                    if (count == b.Length)
+                    {
+                        hasMirrorTwice++;
                     }
                 }
             }
 
-            if(totalCount >= 2)
+            if (hasMirrorTwice >= 2)
             {
+                Console.WriteLine("True");
                 return true;
             }
             else
             {
+                Console.WriteLine("False");
                 return false;
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //int count = 0;
+            //int totalCount = 0;
+
+            //for(int i = 0; i < a.Length; i++)
+            //{
+            //    int k = i;
+            //    
+            //    for(int j = b.Length - 1; j >= 0; j--)
+            //    {
+            //        if(k < a.Length)
+            //        {
+            //            if (a[k] == b[j])
+            //            {
+            //                k++;
+            //                count++;
+            //            }
+            //            else
+            //            {
+            //                count = 0;
+            //                break;
+            //            }
+
+            //            if (count >= b.Length)
+            //            {
+            //                totalCount++;
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
+
+            //if(totalCount >= 2)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
         }
     }
 }

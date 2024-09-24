@@ -40,51 +40,138 @@
 //Declare your method in such a way that any caller can be sure that this will not happen.
 //Your solution should run in no worse than O(N log N) time, where N is the number of pairs in the dictionary.
 
-using System.Runtime.InteropServices;
 
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class ByAge
     {
-        public static Dictionary<int, List<string>> RunByAge(Dictionary<string, int> namesAndAges, int minAge, int maxAge) 
+        public static void RunByAge()
         {
-            Dictionary<int, List<string>> agesAndNames = new Dictionary<int, List<string>>();
-
-            foreach (var name in namesAndAges)
+            Dictionary<string, int> people = new Dictionary<string, int>
             {
-                if (agesAndNames.ContainsKey(name.Value) == false)
+                { "Allison", 18}, { "Benson", 48}, { "David", 20}, { "Erik", 20}, { "Galen", 15}, { "Grace", 25},
+                { "Helene", 40}, { "Janette", 18}, { "Jessica", 35}, { "Marty", 35}, { "Paul", 28}, { "Sara", 15},
+                { "Stuart", 98}, { "Tyler", 6}, { "Zack", 20}
+            };
+            Dictionary<int, string> results = new Dictionary<int, string>();
+
+            int minAge = 20;
+            int maxAge = 40;
+
+            foreach (var person in people)
+            {
+                if (person.Value >= minAge && person.Value <= maxAge)
                 {
-                    if(name.Value >= minAge && name.Value <= maxAge)
+                    if (!results.ContainsKey(person.Value))
                     {
-                        agesAndNames.Add(name.Value, new List<string> { name.Key });
+                        results.Add(person.Value, person.Key);
                     }
-                }
-                else
-                {
-                    agesAndNames[name.Value].Add(name.Key);
+                    else
+                    {
+                        results[person.Value] += " and " + person.Key;
+                    }
                 }
             }
 
-            return agesAndNames;            
+            PrintResults(results);
         }
 
-        public static void DisplayDictionary(Dictionary<int, List<string>> dict)
+        private static void PrintResults(Dictionary<int, string> results)
         {
-            foreach(var name in dict)
+            foreach (var result in results)
             {
-                Console.Write($"{name.Key}: ");
-
-                for(int i = 0; i < name.Value.Count; i++)
-                {
-                    Console.Write($"{name.Value[i]}");
-
-                    if (i + 1 < name.Value.Count)
-                    {
-                        Console.Write(" and ");
-                    }
-                }
-                Console.WriteLine();
-            }    
+                Console.WriteLine($"{result.Key} - {result.Value}");
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static Dictionary<int, List<string>> RunByAge(Dictionary<string, int> namesAndAges, int minAge, int maxAge) 
+        //{
+        //    Dictionary<int, List<string>> agesAndNames = new Dictionary<int, List<string>>();
+
+        //    foreach (var name in namesAndAges)
+        //    {
+        //        if (agesAndNames.ContainsKey(name.Value) == false)
+        //        {
+        //            if(name.Value >= minAge && name.Value <= maxAge)
+        //            {
+        //                agesAndNames.Add(name.Value, new List<string> { name.Key });
+        //            }
+        //        }
+        //        else
+        //        {
+        //            agesAndNames[name.Value].Add(name.Key);
+        //        }
+        //    }
+
+        //    return agesAndNames;            
+        //}
+
+        //public static void DisplayDictionary(Dictionary<int, List<string>> dict)
+        //{
+        //    foreach(var name in dict)
+        //    {
+        //        Console.Write($"{name.Key}: ");
+
+        //        for(int i = 0; i < name.Value.Count; i++)
+        //        {
+        //            Console.Write($"{name.Value[i]}");
+
+        //            if (i + 1 < name.Value.Count)
+        //            {
+        //                Console.Write(" and ");
+        //            }
+        //        }
+        //        Console.WriteLine();
+        //    }    
+        //}
     }
 }

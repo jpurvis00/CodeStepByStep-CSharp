@@ -1,4 +1,6 @@
 ﻿
+using Dumpify;
+
 //Write a method named Reverse that accepts a dictionary from integers to strings
 //as a parameter and returns a new SortedDictionary of strings to integers that
 //is the original's "Reverse". The Reverse of a dictionary is defined here to be a
@@ -20,32 +22,81 @@ namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class Reverse
     {
-        public static void RunReverse(Dictionary<int, string> reverse)
-        {
-            Dictionary<string, int> newDict = CreateDictionary(reverse);
-            DisplayDictionary(newDict);
-        }
 
-        private static Dictionary<string, int> CreateDictionary(Dictionary<int, string> reverse)
+        public static void RunReverse()
         {
-            Dictionary<string, int> namesDict = new Dictionary<string, int>();
-
-            foreach (var item in reverse)
+            Dictionary<int, string> ages = new()
             {
-                if (namesDict.ContainsKey(item.Value) == false)
+                { 42, "Marty"}, { 81, "Sue"}, { 17, "Ed"}, { 31, "Dave"}, { 56, "Ed"}, { 3, "Marty"}, { 29, "Ed"}
+            };
+
+            Dictionary<string, int> namesReversed = new();
+
+            foreach (KeyValuePair<int, string> age in ages)
+            {
+                if (!namesReversed.ContainsKey(age.Value))
                 {
-                    namesDict.Add(item.Value, item.Key);
+                    namesReversed.Add(age.Value, age.Key);
                 }
             }
 
-            return namesDict;
+            namesReversed.DumpConsole();
         }
-        private static void DisplayDictionary(Dictionary<string, int> newDict)
-        {
-            foreach (var item in newDict)
-            {
-                Console.WriteLine($"Key: {item.Key}     Value: {item.Value}");
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static void RunReverse(Dictionary<int, string> reverse)
+        //{
+        //    Dictionary<string, int> newDict = CreateDictionary(reverse);
+        //    DisplayDictionary(newDict);
+        //}
+
+        //private static Dictionary<string, int> CreateDictionary(Dictionary<int, string> reverse)
+        //{
+        //    Dictionary<string, int> namesDict = new Dictionary<string, int>();
+
+        //    foreach (var item in reverse)
+        //    {
+        //        if (namesDict.ContainsKey(item.Value) == false)
+        //        {
+        //            namesDict.Add(item.Value, item.Key);
+        //        }
+        //    }
+
+        //    return namesDict;
+        //}
+        //private static void DisplayDictionary(Dictionary<string, int> newDict)
+        //{
+        //    foreach (var item in newDict)
+        //    {
+        //        Console.WriteLine($"Key: {item.Key}     Value: {item.Value}");
+        //    }
+        //}
     }
 }

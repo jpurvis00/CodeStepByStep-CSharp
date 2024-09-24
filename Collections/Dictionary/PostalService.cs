@@ -1,4 +1,5 @@
-﻿
+﻿using Dumpify;
+
 //Write a method named PostalService that helps the postal service sort
 //mail for customers based on "ZIP" codes. A ZIP code is an integer that
 //represents a given city or region of the USA. Your method accepts two dictionaries as parameters:
@@ -69,70 +70,167 @@
 //You can have as many simple variables as you like, such as integers or strings.
 //Do not modify the dictionaries that are passed in to your method as parameters.
 
+
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
-    public class PostalService
+    public static class PostalService
     {
-        public static Dictionary<string, string> results = new Dictionary<string, string>();
-        
-        public static void RunPostalService(Dictionary<string, int> people, Dictionary<int, string> cities)
-        {
-            CreateKeysForResultsDict(cities);
-            CreateValueString(people, cities);
-            var sortedDict = results.OrderBy(x => x.Key);
-            DisplayResultsDictionary(sortedDict);
-        }
+        private static Dictionary<string, string> cityNames = new();
 
-        private static void CreateKeysForResultsDict(Dictionary<int, string> cities)
+        public static void RunPostalService()
         {
-            foreach (var kvp in cities)
+            Dictionary<string, int> people1 = new();
+            Dictionary<string, int> people = new()
             {
-                if (results.ContainsKey(kvp.Value) == false)
+                { "Ally T Obern", 85704}, { "Madonna", 11430}, { "David Q Shaw", 90045}, { "Mike Tom Brooks", 85704},
+                { "Jerry Cain", 11430}, { "Kate Jan Martin", 68052}, { "Jane Su", 68052}, { "Jessica K. R. Miller", 94305},
+                { "Marty Doug Stepp", 95050}, { "Nick T", 94305}, { "Sara de la Pizza", 68052}, { "Stu T. Reges", 94305},
+                { "Prince", 94305}, { "Dany Khaleesi Mother of Dragons Targaryen", 9999999}
+            };
+
+            Dictionary<int, string> cities = new()
+            {
+                { 11430, "NewYork"}, { 22222, "Duluth"}, { 68052, "Springfield"}, { 71384, "Omaha"}, { 85704, "Tucson"},
+                { 90045, "Redmond"}, { 94305, "Stanford"}, { 95050, "SantaClara"}, { 9999999, "Westeros"}
+            };
+
+            if (people.Count() == 0)
+            {
+                Console.WriteLine("There are no customers");
+            }
+            else
+            {
+                foreach (KeyValuePair<string, int> person in people)
                 {
-                    results.Add(kvp.Value, string.Empty); 
+                    if (cities.ContainsKey(person.Value))
+                    {
+                        CreateCityNamesDict(person, cities, person.Key.Split(' ').Last());
+                    }
                 }
             }
+
+            cityNames.DumpConsole();
         }
 
-        private static void CreateValueString(Dictionary<string, int> people, Dictionary<int, string> cities)
+        private static void CreateCityNamesDict(KeyValuePair<string, int> person, Dictionary<int, string> cities, string lastName)
         {
-            foreach (var kvp in people)
+            foreach (KeyValuePair<int, string> city in cities)
             {
-                string[] temp = kvp.Key.Split(' ');
-                string lastName = temp[temp.Count() - 1];
-
-                string cityKey = string.Empty;
-                if (cities.ContainsKey(kvp.Value) == true)
+                if (person.Value == city.Key)
                 {
-                    cityKey = cities[kvp.Value];
-                }
-
-                if (results.ContainsKey(cityKey) == true)
-                {
-                    string names = results[cityKey];
-
-                    if (names.Length <= 0)
+                    if (!cityNames.ContainsKey(city.Value))
                     {
-                        names = lastName;
+                        cityNames.Add(city.Value, lastName);
                     }
                     else
                     {
-                        names = names + " and " + lastName;
+                        cityNames[city.Value] += " and " + lastName;
                     }
-                    results[cityKey] = names;
                 }
             }
         }
 
-        private static void DisplayResultsDictionary(IOrderedEnumerable<KeyValuePair<string, string>> sortedDict)
-        {
-            foreach (var kvp in sortedDict)
-            {
-                if (kvp.Value.Length > 0)
-                {
-                    Console.WriteLine($"key: {kvp.Key}  value: {kvp.Value}");
-                }
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static Dictionary<string, string> results = new Dictionary<string, string>();
+        //
+        //public static void RunPostalService(Dictionary<string, int> people, Dictionary<int, string> cities)
+        //{
+        //    CreateKeysForResultsDict(cities);
+        //    CreateValueString(people, cities);
+        //    var sortedDict = results.OrderBy(x => x.Key);
+        //    DisplayResultsDictionary(sortedDict);
+        //}
+
+        //private static void CreateKeysForResultsDict(Dictionary<int, string> cities)
+        //{
+        //    foreach (var kvp in cities)
+        //    {
+        //        if (results.ContainsKey(kvp.Value) == false)
+        //        {
+        //            results.Add(kvp.Value, string.Empty); 
+        //        }
+        //    }
+        //}
+
+        //private static void CreateValueString(Dictionary<string, int> people, Dictionary<int, string> cities)
+        //{
+        //    foreach (var kvp in people)
+        //    {
+        //        string[] temp = kvp.Key.Split(' ');
+        //        string lastName = temp[temp.Count() - 1];
+
+        //        string cityKey = string.Empty;
+        //        if (cities.ContainsKey(kvp.Value) == true)
+        //        {
+        //            cityKey = cities[kvp.Value];
+        //        }
+
+        //        if (results.ContainsKey(cityKey) == true)
+        //        {
+        //            string names = results[cityKey];
+
+        //            if (names.Length <= 0)
+        //            {
+        //                names = lastName;
+        //            }
+        //            else
+        //            {
+        //                names = names + " and " + lastName;
+        //            }
+        //            results[cityKey] = names;
+        //        }
+        //    }
+        //}
+
+        //private static void DisplayResultsDictionary(IOrderedEnumerable<KeyValuePair<string, string>> sortedDict)
+        //{
+        //    foreach (var kvp in sortedDict)
+        //    {
+        //        if (kvp.Value.Length > 0)
+        //        {
+        //            Console.WriteLine($"key: {kvp.Key}  value: {kvp.Value}");
+        //        }
+        //    }
+        //}
     }
 }

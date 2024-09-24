@@ -16,22 +16,42 @@ namespace CodeStepByStep_CSharp.Arrays
         public static int RunFindRange(int[] a1)
         {
             int smallest = a1[0];
-            int largest = a1[0]; 
+            int largest = a1[0];
 
             for (int i = 0; i < a1.Length; i++)
             {
-                if(a1[i] < smallest)
+                if (a1[i] < smallest)
                 {
                     smallest = a1[i];
                 }
 
-                if(a1[i] > largest)
+                if (a1[i] > largest)
                 {
                     largest = a1[i];
                 }
             }
 
-            return largest - smallest + 1;
+            return (largest - smallest) + 1;
+
+
+
+            //int smallest = a1[0];
+            //int largest = a1[0]; 
+
+            //for (int i = 0; i < a1.Length; i++)
+            //{
+            //    if(a1[i] < smallest)
+            //    {
+            //        smallest = a1[i];
+            //    }
+
+            //    if(a1[i] > largest)
+            //    {
+            //        largest = a1[i];
+            //    }
+            //}
+
+            //return largest - smallest + 1;
         }
     }
 }

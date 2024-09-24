@@ -25,71 +25,160 @@
 //Constraints: You may declare at most one auxiliary data structure to help you
 //solve this problem. Do not modify the dictionary that is passed in to your method as a parameter.
 
-
-
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class GetMajorityLastName
     {
-        public static string RunGetMajorityLastName(Dictionary<string, string> names)
+        public static void RunGetMajorityLastName()
         {
-            string result = String.Empty;
+            Dictionary<string, string> names = new Dictionary<string, string>
+           {
+               //{"Hal", "Perkins"}, { "Mark", "Smith"}, { "Mike", "Smith"},
+               //{ "Stuart", "Reges"}, { "David", "Smith"}, { "Jean", "Reges"},
+               //{ "Geneva", "Smith"}, { "Amie", "Smith"}, { "Bruce", "Reges"}
+                {"Marty", "Stepp"}, { "Mehran", "Sahami"}, { "Keith", "Schwarz"},
+                { "Cynthia", "Lee"}, { "Yogurt", "Schwarz"}, { "Tywin", "Lannister"},
+                { "Rob", "Stark"}, { "Sansa", "Stark"}, { "Tyrion", "Lannister"}
+           };
 
-            var lastNames = CreateLastNameDict(names);
-            result = FindMostCommonLastName(lastNames, names.Count);
-
-            return result;
+            Dictionary<string, int> lastNames = CreateLastNameDict(names);
+            Console.WriteLine($"Last name majority: {GetMajority(lastNames)}");
         }
 
-        private static string FindMostCommonLastName(Dictionary<string, int> lastNames, int dictionaryCount)
+        private static string GetMajority(Dictionary<string, int> lastNames)
         {
-            string mostCommonLastName = String.Empty;
-            int highestNumber = 0;
+            int max = 0;
+            string lastName = string.Empty;
+            int count = lastNames.Count;
 
-            if (lastNames == null || lastNames.Count == 0)
+            foreach (var name in lastNames)
             {
-                return "?";
-            }
-
-            if(lastNames.Count == 1)
-            {
-                return lastNames.First().Key;
-            }
-
-            foreach(var name in lastNames)
-            {
-                if(name.Value > highestNumber)
+                if (name.Value > max)
                 {
-                    highestNumber = name.Value;
-                    mostCommonLastName = name.Key;
+                    max = name.Value;
+                    lastName = name.Key;
                 }
             }
 
-            if(highestNumber < dictionaryCount / 2)
+            if (max > count / 2)
             {
-                mostCommonLastName = "?";
+                return lastName;
             }
-
-            return mostCommonLastName;
+            else
+            {
+                return "?";
+            }
         }
 
         private static Dictionary<string, int> CreateLastNameDict(Dictionary<string, string> names)
         {
-            Dictionary<string, int> lastNames = new Dictionary<string, int>();
+            Dictionary<string, int> lastNames = new();
 
-            foreach(var name in names)
+            foreach (var name in names)
             {
-                if(lastNames.ContainsKey(name.Value) == false)
+                if (!lastNames.ContainsKey(name.Value))
                 {
                     lastNames.Add(name.Value, 1);
                 }
                 else
                 {
-                    lastNames[name.Value]++;
+                    lastNames[name.Value] += 1;
                 }
             }
 
             return lastNames;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static string RunGetMajorityLastName(Dictionary<string, string> names)
+        //{
+        //    string result = String.Empty;
+
+        //    var lastNames = CreateLastNameDict(names);
+        //    result = FindMostCommonLastName(lastNames, names.Count);
+
+        //    return result;
+        //}
+
+        //private static string FindMostCommonLastName(Dictionary<string, int> lastNames, int dictionaryCount)
+        //{
+        //    string mostCommonLastName = String.Empty;
+        //    int highestNumber = 0;
+
+        //    if (lastNames == null || lastNames.Count == 0)
+        //    {
+        //        return "?";
+        //    }
+
+        //    if(lastNames.Count == 1)
+        //    {
+        //        return lastNames.First().Key;
+        //    }
+
+        //    foreach(var name in lastNames)
+        //    {
+        //        if(name.Value > highestNumber)
+        //        {
+        //            highestNumber = name.Value;
+        //            mostCommonLastName = name.Key;
+        //        }
+        //    }
+
+        //    if(highestNumber < dictionaryCount / 2)
+        //    {
+        //        mostCommonLastName = "?";
+        //    }
+
+        //    return mostCommonLastName;
+        //}
+
+        //private static Dictionary<string, int> CreateLastNameDict(Dictionary<string, string> names)
+        //{
+        //    Dictionary<string, int> lastNames = new Dictionary<string, int>();
+
+        //    foreach(var name in names)
+        //    {
+        //        if(lastNames.ContainsKey(name.Value) == false)
+        //        {
+        //            lastNames.Add(name.Value, 1);
+        //        }
+        //        else
+        //        {
+        //            lastNames[name.Value]++;
+        //        }
+        //    }
+
+        //    return lastNames;
+        //}
     }
 }

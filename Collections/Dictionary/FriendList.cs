@@ -26,54 +26,171 @@
 //structure as auxiliary storage. A nested structure, such as a set of lists,
 //counts as one collection. (You can have as many simple variables as you like, such as ints or strings.)
 
+
+
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class FriendList
     {
-        public static void RunFriendList(string fileName)
+        public static void RunFriendList()
         {
-            Dictionary<string, List<string>> friends = new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> friends = new();
+            string fileLocation = @"C:\Users\jeffp\source\repos\CodeStepByStep-CSharp\Collections\Dictionary\Buddies.txt";
+            string[] lines = File.ReadAllLines(fileLocation);
 
-            using(StreamReader sr = new StreamReader(fileName))
+
+            friends = CreateDictionary(friends, lines);
+
+            friends = MatchFriends(friends, lines);
+
+            foreach (var friend in friends)
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                Console.Write($"{{ \"{friend.Key}\", ");//{friend.Value}\" }} }}");
+
+                foreach (var person in friend.Value)
                 {
-                    CreateFriendsList(friends, line);
+                    Console.Write($"{{ \"{person} \" }}, ");
+                }
+                Console.Write($"}}\n");
+            }
+        }
+
+        private static Dictionary<string, List<string>> MatchFriends(Dictionary<string, List<string>> friends, string[] lines)
+        {
+            string[] names;
+            foreach (var line in lines)
+            {
+                if (line == null)
+                {
+                    break;
+                }
+                else
+                {
+                    names = line.Split(' ');
+                }
+
+                if (friends.ContainsKey(names[1]))
+                {
+                    if (!friends[names[1]].Contains(names[0]))
+                    {
+                        friends[names[1]].Add(names[0]);
+                    }
+                }
+
+                if (friends.ContainsKey(names[0]))
+                {
+                    if (!friends[names[0]].Contains(names[1]))
+                    {
+                        friends[names[0]].Add(names[1]);
+                    }
                 }
             }
+
+            return friends;
         }
 
-        private static void CreateFriendsList(Dictionary<string, List<string>> friends, string line)
+        private static Dictionary<string, List<string>> CreateDictionary(Dictionary<string, List<string>> friends, string[] lines)
         {
-            string[] names = line.Split(' ');
-
-            CreateDictEntryForEachFriend(friends, names);
-            LinkFriends(friends, names);
-        }
-
-        private static void LinkFriends(Dictionary<string, List<string>> friends, string[] names)
-        {
-            if (friends.ContainsKey(names[0]) == true)
+            string[] names;
+            foreach (var line in lines)
             {
-                friends[names[0]].Add(names[1]);
-            }
-            
-            if (friends.ContainsKey(names[1]) == true)
-            {
-                friends[names[1]].Add(names[0]);
-            }
-        }
-
-        private static void CreateDictEntryForEachFriend(Dictionary<string, List<string>> friends, string[] names)
-        {
-            for(int i = 0; i < names.Length; i++)
-            {
-                if (friends.ContainsKey(names[i]) == false)
+                if (line == null)
                 {
-                    friends.Add(names[i], new List<string>());
+                    break;
+                }
+                else
+                {
+                    names = line.Split(' ');
+                }
+
+
+                if (!friends.ContainsKey(names[0]))
+                {
+                    friends.Add(names[0], new List<string> { names[1] });
+                }
+
+                if (!friends.ContainsKey(names[1]))
+                {
+                    friends.Add(names[1], new List<string> { names[0] });
                 }
             }
+
+            return friends;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static void RunFriendList(string fileName)
+        //{
+        //    Dictionary<string, List<string>> friends = new Dictionary<string, List<string>>();
+
+        //    using(StreamReader sr = new StreamReader(fileName))
+        //    {
+        //        string line;
+        //        while ((line = sr.ReadLine()) != null)
+        //        {
+        //            CreateFriendsList(friends, line);
+        //        }
+        //    }
+        //}
+
+        //private static void CreateFriendsList(Dictionary<string, List<string>> friends, string line)
+        //{
+        //    string[] names = line.Split(' ');
+
+        //    CreateDictEntryForEachFriend(friends, names);
+        //    LinkFriends(friends, names);
+        //}
+
+        //private static void LinkFriends(Dictionary<string, List<string>> friends, string[] names)
+        //{
+        //    if (friends.ContainsKey(names[0]) == true)
+        //    {
+        //        friends[names[0]].Add(names[1]);
+        //    }
+        //    
+        //    if (friends.ContainsKey(names[1]) == true)
+        //    {
+        //        friends[names[1]].Add(names[0]);
+        //    }
+        //}
+
+        //private static void CreateDictEntryForEachFriend(Dictionary<string, List<string>> friends, string[] names)
+        //{
+        //    for(int i = 0; i < names.Length; i++)
+        //    {
+        //        if (friends.ContainsKey(names[i]) == false)
+        //        {
+        //            friends.Add(names[i], new List<string>());
+        //        }
+        //    }
+        //}
     }
 }

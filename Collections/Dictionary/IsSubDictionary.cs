@@ -22,39 +22,105 @@
 //Constraints: You may not declare any auxiliary data structures in solving this problem.
 
 
+
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class IsSubDictionary
     {
-        public static bool RunIsSubDictionary(Dictionary<string, string> dict1, Dictionary<string, string> dict2)
-        {
-            bool isSubDictionary = false;
 
+        public static void RunIsSubDictionary()
+        {
+            Dictionary<string, string> dict1 = new() { { "Smith", "949-0504" }, { "Marty", "206-9024" } };
+            Dictionary<string, string> dict2 = new() { { "Marty", "206-9024" }, { "Hawking", "123-4567" }, { "Smith", "949-0504" }, { "Newton", "123-4567" } };
+            Dictionary<string, string> dict3 = new() { { "Alisha", "321-7654" }, { "Hawking", "123-4567" }, { "Smith", "888-8888" } };
+            Dictionary<string, string> dict4 = new() { };
+
+            bool isSubDictionary = CheckSubDictionary(dict4, dict3);
+
+            Console.WriteLine(isSubDictionary);
+        }
+
+        private static bool CheckSubDictionary(Dictionary<string, string> dict1, Dictionary<string, string> dict2)
+        {
             if (dict1.Count == 0)
             {
                 return true;
             }
 
-            foreach(var kvp in dict1)
+            foreach (var item in dict1)
             {
-                if (dict2.ContainsKey(kvp.Key))
+                if (!dict2.ContainsKey(item.Key))
                 {
-                    if(kvp.Value == dict2[kvp.Key])
-                    {
-                        isSubDictionary = true;                        
-                    }
-                    else
-                    {
-                        isSubDictionary = false;
-                    }
+                    return false;
                 }
                 else
                 {
-                    isSubDictionary = false;
+                    if (dict2[item.Key] != item.Value)
+                    {
+                        return false;
+                    }
+
                 }
             }
-
-            return isSubDictionary;
+            return true;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static bool RunIsSubDictionary(Dictionary<string, string> dict1, Dictionary<string, string> dict2)
+        //{
+        //    bool isSubDictionary = false;
+
+        //    if (dict1.Count == 0)
+        //    {
+        //        return true;
+        //    }
+
+        //    foreach(var kvp in dict1)
+        //    {
+        //        if (dict2.ContainsKey(kvp.Key))
+        //        {
+        //            if(kvp.Value == dict2[kvp.Key])
+        //            {
+        //                isSubDictionary = true;                        
+        //            }
+        //            else
+        //            {
+        //                isSubDictionary = false;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            isSubDictionary = false;
+        //        }
+        //    }
+
+        //    return isSubDictionary;
+        //}
     }
 }

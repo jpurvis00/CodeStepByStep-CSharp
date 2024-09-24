@@ -30,6 +30,64 @@ namespace CodeStepByStep_CSharp.Arrays
     internal class EvenBeforeOdd
     {
         public static void RunEvenBeforeOdd(int[] a1)
+        //{
+
+        //    for (int i = 0; i < a1.Length; i++)
+        //    {
+        //        bool isEven = IsEven(a1[i]);
+
+        //        int odd;
+        //        if (!isEven)
+        //        {
+        //            odd = a1[i];
+        //            int k = i;
+
+        //            for (int j = i + 1; j < a1.Length; j++)
+        //            {
+        //                if (IsEven(a1[j]))
+        //                {
+        //                    isEven = true;
+        //                    break;
+        //                }
+        //            }
+
+        //            if (isEven)
+        //            {
+        //                for (int j = i + 1; j < a1.Length; j++)
+        //                {
+        //                    a1[k] = a1[j];
+        //                    k++;
+        //                }
+        //                a1[a1.Length - 1] = odd;
+        //                i--;
+        //            }
+        //        }
+        //    }
+
+        //    PrintArray(a1);
+        //    Console.WriteLine();
+        //}
+
+        //private static void PrintArray(int[] a1)
+        //{
+        //    for (int i = 0; i < a1.Length; i++)
+        //    {
+        //        if (i < a1.Length - 1)
+        //        {
+        //            Console.Write($"{a1[i]}, ");
+        //        }
+        //        else
+        //        {
+        //            Console.Write($"{a1[i]}");
+        //        }
+        //    }
+        //}
+
+        //private static bool IsEven(int a1)
+        //{
+        //    return a1 % 2 == 0;
+        //}
+
         {
             Console.Write("Original array:                ");
             DisplayArray(a1);
@@ -41,7 +99,7 @@ namespace CodeStepByStep_CSharp.Arrays
                 DisplayArray(a1);
                 return;
             }
-           
+
             /* if there are no odd numbers in array, display array */
             if (ContainsOddNumbers(a1) != true)
             {
@@ -51,7 +109,7 @@ namespace CodeStepByStep_CSharp.Arrays
             }
 
             /* array has both even/odd #s, display array with even #s before odd */
-            for(int i = 1; i < a1.Length; i++)
+            for (int i = 1; i < a1.Length; i++)
             {
                 if (a1[i] % 2 == 0)
                 {
@@ -61,9 +119,9 @@ namespace CodeStepByStep_CSharp.Arrays
                     /* shift all numbers from the beginning of the array to the right one spot 
                      * ending where the even number was found.  Then replace the a[0] with the
                      * found even # */
-                    for(int j = i; j > 0; j--)
+                    for (int j = i; j > 0; j--)
                     {
-                        a1[j] = a1[j - 1]; 
+                        a1[j] = a1[j - 1];
                     }
 
                     a1[0] = temp;
@@ -76,7 +134,7 @@ namespace CodeStepByStep_CSharp.Arrays
 
         private static bool ContainsOddNumbers(int[] a1)
         {
-            for(int i = 0; i < a1.Length; i++)
+            for (int i = 0; i < a1.Length; i++)
             {
                 if (a1[i] % 2 != 0)
                 {
@@ -89,7 +147,7 @@ namespace CodeStepByStep_CSharp.Arrays
 
         private static void DisplayArray(int[] a1)
         {
-            for(int i  = 0; i < a1.Length; i++)
+            for (int i = 0; i < a1.Length; i++)
             {
                 if (i < a1.Length - 1)
                 {
@@ -104,7 +162,7 @@ namespace CodeStepByStep_CSharp.Arrays
 
         private static bool ContainsEvenNumbers(int[] a1)
         {
-            for(int i = 0; i < a1.Length; i++)
+            for (int i = 0; i < a1.Length; i++)
             {
                 if (a1[i] % 2 == 0)
                 {

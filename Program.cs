@@ -1,10 +1,4 @@
-﻿
-using CodeStepByStep_CSharp.Basics;
-using CodeStepByStep_CSharp.Arrays;
-using CodeStepByStep_CSharp.Classes_and_Object;
-using CodeStepByStep_CSharp.Classes_and_Object.Model;
-using CodeStepByStep_CSharp;
-using CodeStepByStep_CSharp.Collections.Dictionary;
+﻿using CodeStepByStep_CSharp.Collections.Dictionary;
 
 /*     BASICS   
 //NumberLoops.DisplayLoopOutput();
@@ -328,7 +322,20 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //};
 
 //Reverse.RunReverse(reverse);
-
-List<string> list = new List<string> { "hi", "how", "are", "He", "", "Marty!", "this", "morning?", "fine.", "?foo!", "", "HOW", "A"};
-
-Starters.RunStarters(list, 2);
+//Console.WriteLine("1");
+//
+//int i = 0;
+//
+//if(i==0)
+//{
+//Console.WriteLine("2");
+//}
+//List<string> list = new List<string> { "hi", "how", "are", "He", "", "Marty!", "this", "morning?", "fine.", "?foo!", "", "HOW", "A"};
+//
+//Starters.RunStarters(list, 2);
+//int[] a2 = { 8, 9, 2, 1 };
+//int[] a1 = { 5, 7, 1, 2, 9, 8 };
+//Console.WriteLine($"The values from array 2 reversed appear in the original array at least 2 times: {HasMirrorTwice.RunHasMirrorTwice(a1, a2)}");
+//HasMirrorTwice.RunHasMirrorTwice();
+//HasDuplicateValue.RunHasDuplicateValue();
+ToMorseCode.RunToMorseCode();

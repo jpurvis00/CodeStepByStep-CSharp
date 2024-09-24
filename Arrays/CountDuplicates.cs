@@ -16,28 +16,59 @@ namespace CodeStepByStep_CSharp.Arrays
         public static void RunCountDuplicate()
         {
             int[] a1 = { 1, 4, 2, 4, 7, 1, 1, 9, 2, 3, 4, 1 };
-            List<int> checkedNumbers = new List<int>();
+            List<int> alreadyChecked = new();
+            int duplicateCount = 0;
 
-            int consecuctiveCount = 0;
+            if (a1.Length <= 1)
+            {
+                Console.WriteLine($"count: {duplicateCount}");
+            }
 
             for (int i = 0; i < a1.Length; i++)
             {
-                if (checkedNumbers.Contains(a1[i]))
+                if (alreadyChecked.Contains(a1[i]))
                 {
                     break;
                 }
 
-                for (int j = i + 1; j < a1.Length; j++)
+                for (int j = i; j < a1.Length - 1; j++)
                 {
-                    if (a1[j] == a1[i])
+                    if (a1[i] == a1[j + 1])
                     {
-                        consecuctiveCount++;
+                        alreadyChecked.Add(a1[i]);
+                        duplicateCount++;
                     }
                 }
-                checkedNumbers.Add(a1[i]);
             }
-
-            Console.WriteLine($"Number of duplicate #'s: {consecuctiveCount}");
+            Console.WriteLine($"count: {duplicateCount}");
         }
+
+
+        //public static void RunCountDuplicate()
+        //{
+        //    int[] a1 = { 1, 4, 2, 4, 7, 1, 1, 9, 2, 3, 4, 1 };
+        //    List<int> checkedNumbers = new List<int>();
+
+        //    int consecuctiveCount = 0;
+
+        //    for (int i = 0; i < a1.Length; i++)
+        //    {
+        //        if (checkedNumbers.Contains(a1[i]))
+        //        {
+        //            break;
+        //        }
+
+        //        for (int j = i + 1; j < a1.Length; j++)
+        //        {
+        //            if (a1[j] == a1[i])
+        //            {
+        //                consecuctiveCount++;
+        //            }
+        //        }
+        //        checkedNumbers.Add(a1[i]);
+        //    }
+
+        //    Console.WriteLine($"Number of duplicate #'s: {consecuctiveCount}");
+        //}
     }
 }

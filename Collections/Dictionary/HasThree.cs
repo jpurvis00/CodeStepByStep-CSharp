@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 //Write a method named HasThree that accepts a list of strings as a parameter
 //and returns true if any string value occurs at least 3 times in the list.
 //For example, in the list {"to", "be", "or", "be", "to", "be", "hamlet"},
@@ -12,40 +13,87 @@ namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class HasThree
     {
-        public static bool RunHasThree(string[] input)
-        {
-            Dictionary<string, int> wordCount = new Dictionary<string, int>();
 
-            CreateDictionary(wordCount, input);
-            return WordOccursThreeTimes(wordCount);
-        }
 
-        private static bool WordOccursThreeTimes(Dictionary<string, int> wordCount)
+
+        public static void Test()
         {
-            foreach(var word in wordCount)
+            Dictionary<string, int> wordDict = new();
+            string[] words = { "to", "be", "or", "be", "to", "be", "hamlet", "test", "test" };
+
+            foreach (string word in words)
             {
-                if(word.Value >= 3)
+                if (!wordDict.ContainsKey(word))
                 {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static void CreateDictionary(Dictionary<string, int> wordCount, string[] input)
-        {
-            foreach (var word in input)
-            {
-                if (wordCount.ContainsKey(word) == false)
-                {
-                    wordCount.Add(word, 1);
+                    wordDict.Add(word, 1);
                 }
                 else
                 {
-                    wordCount[word]++;
+                    wordDict[word] += 1;
                 }
             }
+
+            foreach (var item in wordDict)
+            {
+                Console.WriteLine($"Word: {item.Key} occurs {item.Value} times.");
+
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static bool RunHasThree(string[] input)
+        //{
+        //    Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+        //    CreateDictionary(wordCount, input);
+        //    return WordOccursThreeTimes(wordCount);
+        //}
+
+        //private static bool WordOccursThreeTimes(Dictionary<string, int> wordCount)
+        //{
+        //    foreach(var word in wordCount)
+        //    {
+        //        if(word.Value >= 3)
+        //        {
+        //            return true;
+        //        }
+        //    }
+
+        //    return false;
+        //}
+
+        //private static void CreateDictionary(Dictionary<string, int> wordCount, string[] input)
+        //{
+        //    foreach (var word in input)
+        //    {
+        //        if (wordCount.ContainsKey(word) == false)
+        //        {
+        //            wordCount.Add(word, 1);
+        //        }
+        //        else
+        //        {
+        //            wordCount[word]++;
+        //        }
+        //    }
+        //}
     }
 }

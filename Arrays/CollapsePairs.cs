@@ -36,9 +36,10 @@ namespace CodeStepByStep_CSharp.Arrays
         {
             for (int i = 0; i < a.Length; i++)
             {
-                var sum = a[i] + a[i + 1];
+                int sum;
+                sum = a[i] + a[i + 1];
 
-                if ((a[i] + a[i + 1]) % 2 == 0)
+                if (sum % 2 == 0)
                 {
                     a[i] = sum;
                     a[i + 1] = 0;
@@ -48,19 +49,49 @@ namespace CodeStepByStep_CSharp.Arrays
                     a[i] = 0;
                     a[i + 1] = sum;
                 }
-
                 i++;
             }
 
-            DisplayNewArray(a);
+            DisplayCollapsedPairs(a);
         }
 
-        private static void DisplayNewArray(int[] a)
+        private static void DisplayCollapsedPairs(int[] a)
         {
-            for(int i = 0; i < a.Length; ++i)
+            for(int i = 0; i < a.Length; i++)
             {
                 Console.Write($"{a[i]}, ");
             }
         }
+
+        //public static void RunCollapsePairs(int[] a)
+        //{
+        //    for (int i = 0; i < a.Length; i++)
+        //    {
+        //        var sum = a[i] + a[i + 1];
+
+        //        if ((a[i] + a[i + 1]) % 2 == 0)
+        //        {
+        //            a[i] = sum;
+        //            a[i + 1] = 0;
+        //        }
+        //        else
+        //        {
+        //            a[i] = 0;
+        //            a[i + 1] = sum;
+        //        }
+
+        //        i++;
+        //    }
+
+        //    DisplayNewArray(a);
+        //}
+
+        //private static void DisplayNewArray(int[] a)
+        //{
+        //    for(int i = 0; i < a.Length; ++i)
+        //    {
+        //        Console.Write($"{a[i]}, ");
+        //    }
+        //}
     }
 }

@@ -45,65 +45,146 @@
 
 
 
+
+
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class LastNamesByAge
     {
-        private Dictionary<string, int> _names { get; set; } = new Dictionary<string, int>();
 
-        public LastNamesByAge(Dictionary<string, int> names)
+        private static Dictionary<int, string> lastNamesByAge = new();
+
+        public static void RunLastNamesByAge()
         {
-            _names = names; 
-        }
-
-        public void RunLastNamesByAge(int minAge, int maxAge)
-        {
-            Dictionary<int, List<string>> namesByAge = CreateNewDictionary(minAge, maxAge);
-            DisplayDictionary(namesByAge);
-
-        }
-
-        private Dictionary<int, List<string>> CreateNewDictionary(int minAge, int maxAge)
-        {
-            Dictionary<int, List<string>> namesByAge = new Dictionary<int, List<string>>();
-
-            foreach (var kvp in _names)
+            Dictionary<string, int> names = new()
             {
-                if (kvp.Value >= minAge && kvp.Value <= maxAge)
-                {
-                    string lastName = kvp.Key.Split(' ')[kvp.Key.Split(' ').Length - 1];
+             { "Allison L. Smith", 18}, { "Benson Kai Lim", 48}, { "David L Shaw", 20}, { "Erik Thomas Jones", 20},
+             { "Galen Wood", 15}, { "Madonna", 25}, { "Helene Q. Martin", 40}, { "Janette Siu", 18},
+             { "Jessica K. Miller", 35}, { "Marty Douglas Stepp", 35}, { "Paul Beame", 28}, { "Sara de la Pizza", 15},
+             { "Stuart T. Reges", 98}, { "Tyler Rigs", 6}, { "Prince", 20}
+            };
 
-                    if (namesByAge.ContainsKey(kvp.Value) == false)
+            int minAge = 20;
+            int maxAge = 40;
+
+            CreateNewDictionary(names, minAge, maxAge);
+
+            DisplayDictionary();
+        }
+
+        private static void DisplayDictionary()
+        {
+            foreach (KeyValuePair<int, string> item in lastNamesByAge)
+            {
+                Console.WriteLine($"age: {item.Key} - names: {item.Value}");
+            }
+        }
+
+        private static void CreateNewDictionary(Dictionary<string, int> names, int minAge, int maxAge)
+        {
+            foreach (KeyValuePair<string, int> item in names)
+            {
+                if (item.Value >= minAge && item.Value <= maxAge)
+                {
+                    string lastName = item.Key.Split(' ').Last();
+
+                    if (!lastNamesByAge.ContainsKey(item.Value))
                     {
-                        namesByAge.Add(kvp.Value, new List<string> { lastName });
+                        lastNamesByAge.Add(item.Value, lastName);
                     }
                     else
                     {
-                        namesByAge[kvp.Value].Add(lastName);
+                        lastNamesByAge[item.Value] += " and " + lastName;
                     }
                 }
             }
-
-            return namesByAge;
         }
 
-        private void DisplayDictionary(Dictionary<int, List<string>> namesByAge)
-        {
-            foreach(var kvp in namesByAge)
-            {
-                Console.Write($"{ kvp.Key }, ");
 
-                for (int i = 0; i < kvp.Value.Count; i++)
-                {
-                    Console.Write($"{kvp.Value[i]}");
-                    
-                    if (i < kvp.Value.Count - 1)
-                    {
-                        Console.Write(" and ");
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private Dictionary<string, int> _names { get; set; } = new Dictionary<string, int>();
+
+        //public LastNamesByAge(Dictionary<string, int> names)
+        //{
+        //    _names = names; 
+        //}
+
+        //public void RunLastNamesByAge(int minAge, int maxAge)
+        //{
+        //    Dictionary<int, List<string>> namesByAge = CreateNewDictionary(minAge, maxAge);
+        //    DisplayDictionary(namesByAge);
+
+        //}
+
+        //private Dictionary<int, List<string>> CreateNewDictionary(int minAge, int maxAge)
+        //{
+        //    Dictionary<int, List<string>> namesByAge = new Dictionary<int, List<string>>();
+
+        //    foreach (var kvp in _names)
+        //    {
+        //        if (kvp.Value >= minAge && kvp.Value <= maxAge)
+        //        {
+        //            string lastName = kvp.Key.Split(' ')[kvp.Key.Split(' ').Length - 1];
+
+        //            if (namesByAge.ContainsKey(kvp.Value) == false)
+        //            {
+        //                namesByAge.Add(kvp.Value, new List<string> { lastName });
+        //            }
+        //            else
+        //            {
+        //                namesByAge[kvp.Value].Add(lastName);
+        //            }
+        //        }
+        //    }
+
+        //    return namesByAge;
+        //}
+
+        //private void DisplayDictionary(Dictionary<int, List<string>> namesByAge)
+        //{
+        //    foreach(var kvp in namesByAge)
+        //    {
+        //        Console.Write($"{ kvp.Key }, ");
+
+        //        for (int i = 0; i < kvp.Value.Count; i++)
+        //        {
+        //            Console.Write($"{kvp.Value[i]}");
+        //            
+        //            if (i < kvp.Value.Count - 1)
+        //            {
+        //                Console.Write(" and ");
+        //            }
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
     }
 }

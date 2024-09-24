@@ -1,4 +1,5 @@
-﻿
+﻿using Dumpify;
+
 //Write a method named PairFrequencies that prints particular data about
 //two-letter pairs in a collection of words. In the English language,
 //some combinations of adjacent letters are more common than others.
@@ -45,44 +46,100 @@
 //You should loop over the contents of the set no more than once.
 //Your solution should run in no worse than O(N2) time, where N is the number of pairs in the dictionary.
 
-
 namespace CodeStepByStep_CSharp.Collections.Dictionary
 {
     public class PairFrequencies
     {
-        public static void RunPairFrequencies(List<string> list)
+
+        public static void RunPairFrequencies()
         {
-            Dictionary<string, int> pairs = new Dictionary<string, int>();
+            List<string> words = new() { "banana", "bends", "i", "mend", "sandy" };
+            Dictionary<string, int> pairs = new();
 
-            foreach(var word in list)
+
+            foreach (string word in words)
             {
-                for(int i = 0; i < word.Length; i++)
-                {
-                    if (i < word.Length - 1)
-                    {
-                        string temp = word.Substring(i, 2);
+                Console.WriteLine($"{word.Length}");
 
-                        if (pairs.ContainsKey(temp) == false)
-                        {
-                            pairs.Add(temp, 1);
-                        }
-                        else
-                        {
-                            pairs[temp]++;
-                        }
+                for (int i = 0; i < word.Length - 1; i++)
+                {
+                    if (!pairs.ContainsKey(word.Substring(i, 2)))
+                    {
+                        pairs.Add(word.Substring(i, 2), 1);
+                    }
+                    else
+                    {
+                        pairs[word.Substring(i, 2)]++;
                     }
                 }
             }
 
-            DisplayOutput(pairs);
+            pairs.DumpConsole();
         }
 
-        private static void DisplayOutput(Dictionary<string, int> pairs)
-        {
-            foreach (var kvp in pairs)
-            {
-                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static void RunPairFrequencies(List<string> list)
+        //{
+        //    Dictionary<string, int> pairs = new Dictionary<string, int>();
+
+        //    foreach(var word in list)
+        //    {
+        //        for(int i = 0; i < word.Length; i++)
+        //        {
+        //            if (i < word.Length - 1)
+        //            {
+        //                string temp = word.Substring(i, 2);
+
+        //                if (pairs.ContainsKey(temp) == false)
+        //                {
+        //                    pairs.Add(temp, 1);
+        //                }
+        //                else
+        //                {
+        //                    pairs[temp]++;
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    DisplayOutput(pairs);
+        //}
+
+        //private static void DisplayOutput(Dictionary<string, int> pairs)
+        //{
+        //    foreach (var kvp in pairs)
+        //    {
+        //        Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+        //    }
+        //}
     }
 }
