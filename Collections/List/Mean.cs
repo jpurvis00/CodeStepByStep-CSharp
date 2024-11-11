@@ -30,8 +30,6 @@ namespace CodeStepByStep_CSharp.Collections.List
                 mean /= l1.Count;
             }
 
-            //Console.WriteLine(mean);
-
             mean.DumpConsole();
         }
     }
