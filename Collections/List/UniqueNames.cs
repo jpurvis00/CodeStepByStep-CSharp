@@ -5,7 +5,6 @@
  * entered, where each name is listed only once (i.e., uniquely) 
  * no matter how many times the user entered the name in the program. 
  * For example, your program should behave as follows:
- *
  * Enter name: Alice
  * Enter name: Bob
  * Enter name: Alice
