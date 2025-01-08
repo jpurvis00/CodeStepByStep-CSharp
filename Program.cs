@@ -1,5 +1,6 @@
 ﻿using CodeStepByStep_CSharp.Collections.Dictionary;
 using CodeStepByStep_CSharp.Collections.List;
+using CodeStepByStep_CSharp.Collections.Set;
 
 /*     BASICS   
 //NumberLoops.DisplayLoopOutput();
@@ -340,4 +341,26 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //HasMirrorTwice.RunHasMirrorTwice();
 //HasDuplicateValue.RunHasDuplicateValue();
 //FindKeithNumber.RunFindKeithNumber();
-IntersectLists.RunIntersect();
+//IntersectLists.RunIntersect();
+//Mean.RunMean();
+//Mirror.RunMirror();
+//List<string> list1 = new() { "a", "b", "c", "b", "b", "a", "b" };
+//RemoveAll.RunRemoveAll(list1, "b");
+//RemoveAll.RunRemoveAll(list1, "a");
+//RemoveBadPairs.RunRemoveBadPairs();
+//RemoveConsecutiveDuplicates.RunRemoveConsecutiveDuplicates();
+//RemoveDuplicates.RunRemoveDuplicates();
+//RemoveEvenLength.RunRemoveEvenLength();
+//RemoveRange.RunRemoveRange();
+//Repeat.RunRepeat();
+//Stretch.RunStretch();
+//Stutter.RunStutter();
+//SwitchPairs.RunSwitchPairs();
+//MaxLength.RunMaxLength();
+//NumInCommon.RunNumInCommon();
+//NumUniqueValues.RunNumUniqueValues();
+//CodeStepByStep_CSharp.Collections.Set.RemoveDuplicates.RunRemoveDuplicates();
+//CodeStepByStep_CSharp.Collections.Set.RemoveRange.RunRemoveRange();
+//CodeStepByStep_CSharp.Collections.Set.Twice.RunTwice();
+//UnionSets.RunUnionSets();
+WordCount.RunWordCount();
