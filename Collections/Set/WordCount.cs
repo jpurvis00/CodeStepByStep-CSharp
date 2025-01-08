@@ -33,7 +33,7 @@ namespace CodeStepByStep_CSharp.Collections.Set
                 {
                     string newWord = CheckForPunctuation(s);
 
-                    if (!words.Contains(newWord.ToLower(System.Globalization.CultureInfo.InvariantCulture)))
+                    if (!words.Contains(newWord.ToLower(CultureInfo.InvariantCulture)))
                     {
                         words.Add(newWord.ToLower(CultureInfo.InvariantCulture));
                     }
