@@ -113,7 +113,7 @@ namespace CodeStepByStep_CSharp.Collections.StackAndQueue
             }
             else
             //stack still has something in it and we have gone through the entire
-            //string. Return the lenght of the string
+            //string. Return the length of the string
             {
                 return (i, ' ');
             }
