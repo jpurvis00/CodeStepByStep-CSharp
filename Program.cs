@@ -1,6 +1,7 @@
 ﻿using CodeStepByStep_CSharp.Collections.Dictionary;
 using CodeStepByStep_CSharp.Collections.List;
 using CodeStepByStep_CSharp.Collections.Set;
+using CodeStepByStep_CSharp.Collections.StackAndQueue;
 
 /*     BASICS   
 //NumberLoops.DisplayLoopOutput();
@@ -363,4 +364,5 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //CodeStepByStep_CSharp.Collections.Set.RemoveRange.RunRemoveRange();
 //CodeStepByStep_CSharp.Collections.Set.Twice.RunTwice();
 //UnionSets.RunUnionSets();
-WordCount.RunWordCount();
+//WordCount.RunWordCount();
+CheckBalance.RunCheckBalance();
