@@ -33,7 +33,7 @@ namespace CodeStepByStep_CSharp.Collections.StackAndQueue
 
             frontToBack.DumpConsole();
 
-            for (int i = 0; i <= frontToBack.Count(); i++)
+            for (int i = 0; i <= frontToBack.Length; i++)
             {
                 if (i % 2 != 0)
                 {
@@ -43,7 +43,7 @@ namespace CodeStepByStep_CSharp.Collections.StackAndQueue
 
             reverseNumbs.DumpConsole();
 
-            for (int i = 0; i <= frontToBack.Count(); i++)
+            for (int i = 0; i <= frontToBack.Length; i++)
             {
 
                 if (i % 2 != 0)
