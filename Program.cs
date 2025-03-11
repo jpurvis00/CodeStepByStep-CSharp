@@ -367,5 +367,4 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //WordCount.RunWordCount();
 //CheckBalance.RunCheckBalance();
 //FlipHalf.RunFlipHalf();
-//IsSorted.RunIsSorted();
-CodeStepByStep_CSharp.Collections.StackAndQueue.Mirror.RunMirror();
+IsSorted.RunIsSorted();
