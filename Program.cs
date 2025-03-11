@@ -366,4 +366,5 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //UnionSets.RunUnionSets();
 //WordCount.RunWordCount();
 //CheckBalance.RunCheckBalance();
-FlipHalf.RunFlipHalf();
+//FlipHalf.RunFlipHalf();
+IsSorted.RunIsSorted();
