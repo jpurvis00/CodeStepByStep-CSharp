@@ -368,4 +368,5 @@ Console.WriteLine($"Absolute day: {dec31.AbsoluteDay()}"); //366
 //CheckBalance.RunCheckBalance();
 //FlipHalf.RunFlipHalf();
 //IsSorted.RunIsSorted();
-CodeStepByStep_CSharp.Collections.StackAndQueue.Mirror.RunMirror();
+//CodeStepByStep_CSharp.Collections.StackAndQueue.Mirror.RunMirror();
+Reorder.RunReorder();
