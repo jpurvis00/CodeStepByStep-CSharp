@@ -66,7 +66,14 @@ namespace CodeStepByStep_CSharp.Collections.StackAndQueue
                 }
             }
 
-            //still need to pop stack and put all values back in queue
+            sortedQueue.DumpConsole();
+            stackForSort.DumpConsole();
+
+            while (stackForSort.Count != 0)
+            {
+                sortedQueue.Enqueue(stackForSort.Pop());
+            }
+
             sortedQueue.DumpConsole();
             stackForSort.DumpConsole();
         }
